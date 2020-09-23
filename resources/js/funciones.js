@@ -21,6 +21,7 @@ export const funcionesGlobales = {
                     usCod +
                     '">Actualizar Clave</a>'
             });
+            //prueba
             return;
         }
         //Obtenemos el # Mes Actual
