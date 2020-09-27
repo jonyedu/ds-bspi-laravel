@@ -2,7 +2,7 @@
   <div class="row m-3">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <center>
-        <h5 class="mt-4">PRODUCTOS</h5>
+        <h5 class="mt-4">Productos</h5>
       </center>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -33,7 +33,7 @@
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="form-group">
-                  <label for="tipo"><label class="text-danger">(*)</label> Categoria</label>
+                  <label for="tipo"><label class="text-danger">(*)</label> Categoría</label>
                   <v-select
                     v-model="selectedCategoria"
                     :value="form.frm_categoria_codigo"
@@ -57,7 +57,7 @@
                     type="text"
                     id="telefono"
                     class="form-control"
-                    placeholder="Ingrese El Telefono Del Contacto"
+                    placeholder="Ingrese clave"
                     v-model="form.frm_clave"
                   />
                 </div>

@@ -154,6 +154,19 @@ Vue.component(
     require("./components/datosGenerales/configuraciones/parroquias/CrearModificarParroquia.vue")
         .default
 );
+//Configuraciones
+/*Tipo de Unidad */
+Vue.component(
+    "crear-modificar-tipo-unidad",
+    require("./components/datosGenerales/configuraciones/tipoUnidad/CrearModificarTipoUnidad.vue")
+        .default
+);
+/*Unidad */
+Vue.component(
+    "crear-modificar-unidad",
+    require("./components/datosGenerales/configuraciones/unidad/CrearModificarUnidad.vue")
+        .default
+);
 Vue.component(
     "crear-aseguradoras",
     require("./components/gestionHospitalaria/generalidades/aseguradoras/CrearAseguradoras.vue")

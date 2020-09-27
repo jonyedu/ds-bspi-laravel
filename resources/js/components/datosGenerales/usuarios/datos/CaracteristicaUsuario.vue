@@ -90,7 +90,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="form-group">
-                    <label for="talla_pantalon">Talla Pantalon</label>
+                    <label for="talla_pantalon">Talla Pantalón</label>
                     <v-select
                         v-model="
                             dataInformacionCaracteristicaUsuario.tallaPantalonNombre
@@ -192,7 +192,7 @@
                                 ? 'form-control'
                                 : 'form-control is-invalid'
                         "
-                        placeholder="Ingrese su observacion"
+                        placeholder="Ingrese su observación"
                         v-model="
                             dataInformacionCaracteristicaUsuario.observacion
                         "

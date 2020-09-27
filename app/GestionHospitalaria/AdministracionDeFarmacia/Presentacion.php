@@ -8,11 +8,7 @@ class Presentacion extends Model
 {
     //
     protected $fillable = [
-        'PRESENTACION_COD',
-          'PRESENTACION_NOM',
-          'PRESENTACION_UNIDAD',
-          'PRESENTACION_LOGIC_ESTADO',
-           'US_COD_CREATED_UPDATED'
+        'PRESENTACION_COD', 'PRESENTACION_NOM', 'PRESENTACION_CANTIDAD', 'UNIDAD_COD', 'PRESENTACION_UNIDAD', 'PRESENTACION_LOGIC_ESTADO', 'US_COD_CREATED_UPDATED', 'created_at', 'updated_at'
     ];
     protected $appends=['PRESENTACIONFULLPRECIO'];
     protected $connection = 'mysql_gestion_hospitalaria';
@@ -28,4 +24,5 @@ class Presentacion extends Model
     {
         return $this->PRESENTACION_NOM.'- Unidad: '.$this->PRESENTACION_UNIDAD;
     }
+
 }

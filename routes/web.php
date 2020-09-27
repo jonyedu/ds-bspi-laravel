@@ -157,6 +157,27 @@ Route::group(['prefix' => 'datos_generales', 'middleware' => ['auth:web']], func
     Route::post('configuraciones/guardar_parroquias', 'DatosGenerales\Usuarios\ParroquiaApiController@guardarParroquias');
     Route::post('configuraciones/modificar_parroquias', 'DatosGenerales\Usuarios\ParroquiaApiController@modificarParroquias');
     Route::post('configuraciones/eliminar_parroquias', 'DatosGenerales\Usuarios\ParroquiaApiController@eliminarParroquias');
+
+    /* Modulo Configuraciones */
+
+    //Tipo Unidad
+    //***Ruta para cargar los datos de Tipo Unidad
+    Route::get('configuraciones/cargar_tipo_unidad', 'DatosGenerales\Configuraciones\TipoUnidadApiController@cargarTipoUnidadTabla');
+    //***Ruta para guardar o modificar los datos de Tipo Unidad
+    Route::post('configuraciones/guardar_modificar_tipo_unidad', 'DatosGenerales\Configuraciones\TipoUnidadApiController@guardarModificarTipoUnidad');
+    //***Ruta para eliminar los datos de Tipo Unidad
+    Route::delete('configuraciones/eliminar_tipo_unidad/{id}', 'DatosGenerales\Configuraciones\TipoUnidadApiController@eliminarTipoUnidad');
+
+    //Unidad
+    //***Ruta para cargar los datos de Unidad por Tipo de Unidad
+    Route::get('configuraciones/cargar_unidad_por_tipo_unidad/{id}', 'DatosGenerales\Configuraciones\UnidadApiController@cargarUnidadPorTipoUnidad');
+    //***Ruta para cargar los datos de Unidad
+    Route::get('configuraciones/cargar_unidad', 'DatosGenerales\Configuraciones\UnidadApiController@cargarUnidadTabla');
+    //***Ruta para guardar o modificar los datos de Unidad
+    Route::post('configuraciones/guardar_modificar_unidad', 'DatosGenerales\Configuraciones\UnidadApiController@guardarModificarUnidad');
+    //***Ruta para eliminar los datos de Unidad
+    Route::delete('configuraciones/eliminar_unidad/{id}', 'DatosGenerales\Configuraciones\UnidadApiController@eliminarUnidad');
+
 });
 //Gestion Hospitalaria
 Route::group(['prefix' => 'gestion_hospitalaria', 'middleware' => ['auth:web']], function () {

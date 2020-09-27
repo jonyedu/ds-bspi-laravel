@@ -2,7 +2,7 @@
     <div class="row m-3">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <center>
-                <h5 class="mt-4">ASOCIACIÓN DE FARMACIA</h5>
+                <h5 class="mt-4">Asociación de Farmacia</h5>
             </center>
         </div>
 

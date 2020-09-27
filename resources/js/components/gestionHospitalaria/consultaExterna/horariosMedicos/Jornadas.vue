@@ -7,7 +7,7 @@
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
               <div class="form-group">
-                <label for="cargo">Personal Medico</label>
+                <label for="cargo">Personal Médico</label>
                 <v-select
                   v-model="personalMod"
                   :value="form.TRABAJADORESPERSONALSALUD_COD"

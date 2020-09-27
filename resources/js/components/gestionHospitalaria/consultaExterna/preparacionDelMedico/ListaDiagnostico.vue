@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
-            <h1 class="mt-4">DIAGNOSTICO</h1>
+            <h1 class="mt-4">Diagnóstico</h1>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
@@ -14,7 +14,7 @@
                                     v-model="selectedGrupo"
                                     :value="form.codigo_grupo"
                                     :options="grupos"
-                                    label="CIE_DESCRIPCION"
+                                    label="display"
                                     @input="setSelectedGrupo"
                                 >
                                     <template slot="no-options">
@@ -30,7 +30,7 @@
                                     v-model="selectedSubGrupo"
                                     :value="form.codigo_sub_grupo"
                                     :options="subGrupos"
-                                    label="CIE_DESCRIPCION"
+                                    label="display"
                                     @input="setSelectedSubGrupo"
                                 >
                                     <template slot="no-options">
@@ -85,7 +85,7 @@ export default {
                     type: "String"
                 },
                 {
-                    label: "Descripcion",
+                    label: "Descripción",
                     field: "cie_descripcion",
                     type: "String"
                 }
@@ -116,7 +116,7 @@ export default {
     methods: {
         setSelectedGrupo(value) {
             if (value !== null) {
-                this.form.codigo_grupo = value.CIE_COD;
+                this.form.codigo_grupo = value.value;
                 let that = this;
                 let url =
                     "/gestion_hospitalaria/consulta_externa/cargar_cie_sub_grupos/" +
@@ -125,7 +125,20 @@ export default {
                 axios
                     .get(url)
                     .then(function(response) {
-                        that.subGrupos = response.data.subGrupos;
+                        let subGrupos = [];
+
+                        for (let i = 0; i < response.data.subGrupos.length; i++) {
+                            let objeto = {};
+                            objeto.value = response.data.subGrupos[i].CIE_COD;
+                            objeto.CIE_CLAVE = response.data.subGrupos[i].CIE_CLAVE;
+                            objeto.display = that.$funcionesGlobales.toCapitalFirstWords(
+                                response.data.subGrupos[i].CIE_DESCRIPCION
+                            );
+                            subGrupos.push(objeto);
+                        }
+                        that.subGrupos = subGrupos;
+
+                        //that.subGrupos = response.data.subGrupos;
                         loader.hide();
                     })
                     .catch(error => {
@@ -174,7 +187,18 @@ export default {
             axios
                 .get(url)
                 .then(function(response) {
-                    that.grupos = response.data.grupos;
+                    let grupos = [];
+
+                    for (let i = 0; i < response.data.grupos.length; i++) {
+                        let objeto = {};
+                        objeto.value = response.data.grupos[i].CIE_COD;
+                        objeto.CIE_CLAVE = response.data.grupos[i].CIE_CLAVE;
+                        objeto.display = that.$funcionesGlobales.toCapitalFirstWords(
+                            response.data.grupos[i].CIE_DESCRIPCION
+                        );
+                        grupos.push(objeto);
+                    }
+                    that.grupos = grupos;
                     loader.hide();
                 })
                 .catch(error => {

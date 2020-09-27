@@ -82,27 +82,27 @@ class ExamenFisicoApiController extends Controller
         if (
             $request->input('EXAMENFISICO_CABEZA_CP') == 1 && ($request->input('EXAMENFISICO_CABEZA_CP_DESCRIPCION') == null || $request->input('EXAMENFISICO_CABEZA_CP_DESCRIPCION') == "")
         ) {
-            return response()->json(['msg' => 'El campo descripcion cabeza es requerido'], 421);
+            return response()->json(['msg' => 'El campo descripción cabeza es requerido.'], 421);
         } else if (
             $request->input('EXAMENFISICO_CUELLO_CP') == 1 && ($request->input('EXAMENFISICO_CUELLO_CP_DESCRIPCION') == null || $request->input('EXAMENFISICO_CUELLO_CP_DESCRIPCION') == "")
         ) {
-            return response()->json(['msg' => 'El campo descripcion cuello es requerido'], 421);
+            return response()->json(['msg' => 'El campo descripción cuello es requerido.'], 421);
         } else if (
             $request->input('EXAMENFISICO_TORAX_CP') == 1 && ($request->input('EXAMENFISICO_TORAX_CP_DESCRIPCION') == null || $request->input('EXAMENFISICO_TORAX_CP_DESCRIPCION') == "")
         ) {
-            return response()->json(['msg' => 'El campo descripcion torax es requerido'], 421);
+            return response()->json(['msg' => 'El campo descripción torax es requerido.'], 421);
         } else if (
             $request->input('EXAMENFISICO_ABDOMEN_CP') == 1 && ($request->input('EXAMENFISICO_ABDOMEN_CP_DESCRIPCION') == null || $request->input('EXAMENFISICO_ABDOMEN_CP_DESCRIPCION') == "")
         ) {
-            return response()->json(['msg' => 'El campo descripcion abdomen es requerido'], 421);
+            return response()->json(['msg' => 'El campo descripción abdomen es requerido.'], 421);
         } else if (
             $request->input('EXAMENFISICO_PELVIS_CP') == 1 && ($request->input('EXAMENFISICO_PELVIS_CP_DESCRIPCION') == null || $request->input('EXAMENFISICO_PELVIS_CP_DESCRIPCION') == "")
         ) {
-            return response()->json(['msg' => 'El campo descripcion pelvis es requerido'], 421);
+            return response()->json(['msg' => 'El campo descripción pelvis es requerido.'], 421);
         } else if (
             $request->input('EXAMENFISICO_EXTREMIDADES_CP') == 1 && ($request->input('EXAMENFISICO_EXTREMIDADES_CP_DESCRIPCION') == null || $request->input('EXAMENFISICO_EXTREMIDADES_CP_DESCRIPCION') == "")
         ) {
-            return response()->json(['msg' => 'El campo descripcion extremidades es requerido'], 421);
+            return response()->json(['msg' => 'El campo descripción extremidades es requerido.'], 421);
         }
     }
 }

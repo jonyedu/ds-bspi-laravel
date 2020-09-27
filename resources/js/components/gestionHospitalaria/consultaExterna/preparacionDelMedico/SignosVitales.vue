@@ -9,7 +9,11 @@
                 <h5 class="card-title">Detalles del Paciente</h5>
             </div>
             <!-- /.card-header -->
-            <div class="card-body" @click.left="calcularSuperficieCorporal" @keyup.tab="calcularSuperficieCorporal">
+            <div
+                class="card-body"
+                @click.left="calcularSuperficieCorporal"
+                @keyup.tab="calcularSuperficieCorporal"
+            >
                 <form role="form">
                     <div class="row">
                         <!-- Inicio Detalles Personales -->
@@ -128,7 +132,10 @@
                         <div class="col-sm-4">
                             <!-- textarea -->
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> Temperatura(°C)</label>
+                                <label
+                                    ><span class="text-danger">(*)</span>
+                                    Temperatura(°C)</label
+                                >
                                 <input
                                     :readonly="
                                         tipoPersonal == 1 || $props.readOnly
@@ -153,7 +160,10 @@
                         <!--Pulso (xMin)  -->
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> Pulso (xMin)</label>
+                                <label
+                                    ><span class="text-danger">(*)</span> Pulso
+                                    (xMin)</label
+                                >
                                 <input
                                     :readonly="
                                         tipoPersonal == 1 || $props.readOnly
@@ -178,7 +188,10 @@
                         <!--Presion Arterial (MinGr)  -->
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> Presion Arterial (MinGr)</label>
+                                <label
+                                    ><span class="text-danger">(*)</span>
+                                    Presion Arterial (MinGr)</label
+                                >
                                 <input
                                     :readonly="
                                         tipoPersonal == 1 || $props.readOnly
@@ -203,7 +216,10 @@
                         <!--Respiracion (30xMin)  -->
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> Respiracion (30xMin)</label>
+                                <label
+                                    ><span class="text-danger">(*)</span>
+                                    Respiracion (30xMin)</label
+                                >
                                 <input
                                     :readonly="
                                         tipoPersonal == 1 || $props.readOnly
@@ -228,7 +244,10 @@
                         <!--Peso (Kg)  -->
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> Peso (Kg)</label>
+                                <label
+                                    ><span class="text-danger">(*)</span> Peso
+                                    (Kg)</label
+                                >
                                 <input
                                     :readonly="
                                         tipoPersonal == 1 || $props.readOnly
@@ -252,9 +271,12 @@
                             </div>
                         </div>
                         <!--Estatura (Cm)  -->
-                        <div class="col-sm-4">
+                        <div class="col-sm-4" v-if="true == false">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> Estatura (Cm)</label>
+                                <label
+                                    ><span class="text-danger">(*)</span>
+                                    Estatura (Cm)</label
+                                >
                                 <input
                                     :readonly="
                                         tipoPersonal == 1 || $props.readOnly
@@ -280,7 +302,10 @@
                         <div class="col-sm-4">
                             <!-- numberarea -->
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> Talla (Cm)</label>
+                                <label
+                                    ><span class="text-danger">(*)</span> Talla
+                                    (Cm)</label
+                                >
                                 <input
                                     :readonly="
                                         tipoPersonal == 1 || $props.readOnly
@@ -306,7 +331,10 @@
                         <!--Superficie Corporal (m2)  -->
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> Superficie Corporal (m²)</label>
+                                <label
+                                    ><span class="text-danger">(*)</span>
+                                    Superficie Corporal (m²)</label
+                                >
                                 <input
                                     :readonly="
                                         tipoPersonal == 1 || $props.readOnly
@@ -373,14 +401,14 @@ export default {
                 tipo_discapacidad: "",
                 discapacidad: "",
                 grado_discapacidad: 0,
-                temperatura: "",
-                pulso: "",
-                presion_arterial: "",
-                respiracion: "",
-                peso: "",
-                estatura: "",
-                talla: "",
-                superficie_corporal: "",
+                temperatura: "0",
+                pulso: "0",
+                presion_arterial: "0",
+                respiracion: "0",
+                peso: "0",
+                estatura: "0",
+                talla: "0",
+                superficie_corporal: "0",
                 fecha: ""
             }
         };
@@ -431,11 +459,15 @@ export default {
         },
         //Metodo para obtener la superficie corporal mediante el peso y talla
         calcularSuperficieCorporal: function() {
-            var resultado = Math.sqrt(
-                (this.form.peso * this.form.talla) / 3600
-            );
-            var superficie_corporal = resultado.toFixed(2);
-            this.form.superficie_corporal = superficie_corporal;
+            if (this.form.peso == "0" && this.form.talla == "0") {
+                this.form.superficie_corporal = "0";
+            } else {
+                var resultado = Math.sqrt(
+                    (this.form.peso * this.form.talla) / 3600
+                );
+                var superficie_corporal = resultado.toFixed(2);
+                this.form.superficie_corporal = superficie_corporal;
+            }
         },
         //Metodo para obtener los datos del paciente mediante el cod cita
         cargarDetallesPaciente: function() {
@@ -469,14 +501,14 @@ export default {
                                 tipo_discapacidad: "",
                                 discapacidad: "",
                                 grado_discapacidad: 0,
-                                temperatura: "",
-                                pulso: "",
-                                presion_arterial: "",
-                                respiracion: "",
-                                peso: "",
-                                estatura: "",
-                                talla: "",
-                                superficie_corporal: "",
+                                temperatura: "0",
+                                pulso: "0",
+                                presion_arterial: "0",
+                                respiracion: "0",
+                                peso: "0",
+                                estatura: "0",
+                                talla: "0",
+                                superficie_corporal: "0",
                                 fecha: ""
                             });
                         that.obtenerFechaActual();
@@ -503,17 +535,27 @@ export default {
                             }
                             //Fin
                             //Obtenemos los datos personales del paciente
-                            that.form.paciente =
-                                that.$funcionesGlobales.toCapitalFirstAllWords(response.data.datos.paciente.FULL_NAME);
-                            that.form.titular =
-                                that.$funcionesGlobales.toCapitalFirstAllWords(response.data.datos.paciente.FULL_NAME);
+                            that.form.paciente = that.$funcionesGlobales.toCapitalFirstAllWords(
+                                response.data.datos.paciente.FULL_NAME
+                            );
+                            that.form.titular = that.$funcionesGlobales.toCapitalFirstAllWords(
+                                response.data.datos.paciente.FULL_NAME
+                            );
                             that.form.fecha_nacimiento =
                                 response.data.datos.paciente.US_FNAC;
                             that.form.edad = edad;
-                            if (response.data.datos.paciente.US_PORC_DISCAPACIDAD > 0) {
-                                that.form.tipo_discapacidad = that.$funcionesGlobales.toCapitalFirstAllWords(response.data.datos.paciente.discapacidad.DISCAPACIDAD_NOM);
+                            if (
+                                response.data.datos.paciente
+                                    .US_PORC_DISCAPACIDAD > 0
+                            ) {
+                                that.form.tipo_discapacidad = that.$funcionesGlobales.toCapitalFirstAllWords(
+                                    response.data.datos.paciente.discapacidad
+                                        .DISCAPACIDAD_NOM
+                                );
                                 that.form.discapacidad = "S";
-                                that.form.grado_discapacidad =response.data.datos.paciente.US_PORC_DISCAPACIDAD + "%";
+                                that.form.grado_discapacidad =
+                                    response.data.datos.paciente
+                                        .US_PORC_DISCAPACIDAD + "%";
                             } else {
                                 that.form.tipo_discapacidad = "No Aplica";
                                 that.form.discapacidad = "No Aplica";
@@ -603,11 +645,6 @@ export default {
                         that.cargarDetallesPaciente();
                     })
                     .catch(error => {
-                        that.$swal({
-                            icon: "error",
-                            title: "Error al procesar los datos",
-                            text: error
-                        });
                         if (error.response.status == 422) {
                             if (
                                 error.response.data.errors.temperatura != null
@@ -651,6 +688,11 @@ export default {
                                 that.errores.superficie_corporal =
                                     error.response.data.errors.superficie_corporal;
                             }
+                            that.$swal({
+                            icon: "error",
+                            title: "Error al procesar la información.",
+                            text: "Error de validación de datos."
+                        });
                         }
                         loader.hide();
                     });

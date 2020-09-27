@@ -13,7 +13,7 @@
                             : 'form-control is-invalid'
                     "
                     id="primer_apellido"
-                    placeholder="Ingrese su primer apellido"
+                    placeholder="Ingrese apellido"
                     v-model="dataInformacionPersonal.primer_apellido"
                 />
                 <small
@@ -35,7 +35,7 @@
                             : 'form-control is-invalid'
                     "
                     id="segundo_apellido"
-                    placeholder="Ingrese su segundo apellido"
+                    placeholder="Ingrese apellido"
                     v-model="dataInformacionPersonal.segundo_apellido"
                 />
                 <small
@@ -59,7 +59,7 @@
                             : 'form-control is-invalid'
                     "
                     id="primer_nombre"
-                    placeholder="Ingrese su primer nombre"
+                    placeholder="Ingrese nombre"
                     v-model="dataInformacionPersonal.primer_nombre"
                 />
                 <small
@@ -81,7 +81,7 @@
                             : 'form-control is-invalid'
                     "
                     id="segundo_nombre"
-                    placeholder="Ingrese su segundo nombre"
+                    placeholder="Ingrese nombre"
                     v-model="dataInformacionPersonal.segundo_nombre"
                 />
                 <small
@@ -106,7 +106,7 @@
                             : 'form-control is-invalid'
                     "
                     id="email_institucional"
-                    placeholder="Ingrese su correo electrónico"
+                    placeholder="Ingrese correo electrónico"
                     v-model="dataInformacionPersonal.email_institucional"
                 />
                 <small
@@ -129,7 +129,7 @@
                             : 'form-control is-invalid'
                     "
                     id="email_alternativo"
-                    placeholder="Ingrese su correo alternativo"
+                    placeholder="Ingrese correo alternativo"
                     v-model="dataInformacionPersonal.email_alternativo"
                 />
                 <small
@@ -142,7 +142,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="form-group">
-                <label for="telefono">Telefono</label>
+                <label for="telefono">Teléfono</label>
                 <input
                     type="email"
                     :class="
@@ -151,7 +151,7 @@
                             : 'form-control is-invalid'
                     "
                     id="telefono"
-                    placeholder="Ingrese su telefono"
+                    placeholder="Ingrese teléfono"
                     v-model="dataInformacionPersonal.telefono"
                 />
                 <small
@@ -173,7 +173,7 @@
                             : 'form-control is-invalid'
                     "
                     id="celular"
-                    placeholder="Ingrese su celular"
+                    placeholder="Ingrese celular"
                     v-model="dataInformacionPersonal.celular"
                 />
                 <small
@@ -307,7 +307,7 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="form-group">
                 <label for="telefono_contacto_emergencia"
-                    >Telefono Contacto Emergencia</label
+                    >Teléfono Contacto Emergencia</label
                 >
                 <input
                     type="text"
@@ -317,7 +317,7 @@
                             ? 'form-control'
                             : 'form-control is-invalid'
                     "
-                    id="telefono_contacto_emergencia"
+                    id="teléfono_contacto_emergencia"
                     placeholder="Ingrese telefono contacto emergencia"
                     v-model="
                         dataInformacionPersonal.telefono_contacto_emergencia
@@ -363,7 +363,7 @@
                     class="btn btn-info btn-sm mb-3"
                     @click="$refs.file.click()"
                 >
-                    Cargar Foto de la cedula
+                    Cargar Cédula de Identidad
                 </button>
             </div>
         </div>

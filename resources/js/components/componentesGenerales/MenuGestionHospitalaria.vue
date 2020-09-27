@@ -16,7 +16,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapsePacientes"
       >
-        <i class="fas fa-user-edit"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-user-edit"></i>
+        </div>
         Pacientes
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -83,7 +85,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseSeguros"
       >
-        <i class="fas fa-user-edit"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-business-time"></i>
+        </div>        
         Seguros
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -135,8 +139,10 @@
         aria-expanded="false"
         aria-controls="pagesCollapsePersonalMedico"
       >
-        <i class="fa fa-user-md"></i>
-        Personal Medico
+        <div class="sb-nav-link-icon">
+          <i class="fa fa-user-md"></i>
+        </div>         
+        Personal Médico
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
         </div>
@@ -168,7 +174,7 @@
                                                 '/gestion_hospitalaria/administracion_de_hospital/personal_medico'
                                         "
             class="nav-link"
-          >Personal Medico</router-link>
+          >Personal Médico</router-link>
 
           <router-link
             :to="
@@ -176,14 +182,14 @@
                                                 '/gestion_hospitalaria/administracion_de_hospital/tipo_trabajadores'
                                         "
             class="nav-link"
-          >Tipos de Personal Medico</router-link>
+          >Tipos de Personal Médico</router-link>
           <router-link
             :to="
                                             prefijo +
                                                 '/gestion_hospitalaria/administracion_de_hospital/funciones_personal_medico'
                                         "
             class="nav-link"
-          >Funciones de Personal Medico</router-link>
+          >Funciones de Personal Médico</router-link>
         </nav>
       </div>
       <a
@@ -194,7 +200,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseAdministracionHospital"
       >
-        <i class="fas fa-hospital"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-hospital"></i>
+        </div>        
         Administración de Hospital
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -275,8 +283,10 @@
         aria-expanded="false"
         aria-controls="pagesCollapseAdministracionCitas"
       >
-        <i class="fas fa-calendar"></i>
-        Gestión de admisiones
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-calendar"></i>
+        </div>
+        Gestión de Admisiones
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
         </div>
@@ -319,7 +329,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseConsultaExterna"
       >
-        <i class="fas fa-user-nurse"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-user-nurse"></i>
+        </div> 
         Consulta Externa
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -352,7 +364,7 @@
                                                 '/gestion_hospitalaria/consulta_externa/jornadas'
                                         "
             class="nav-link"
-          >Horarios de medicos</router-link>
+          >Horarios de Médico</router-link>
           <router-link
             :to="
                                             prefijo +
@@ -370,7 +382,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseEmergencia"
       >
-        <i class="fas fa-first-aid"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-first-aid"></i>
+        </div>         
         Emergencia
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -408,7 +422,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseFarmacia"
       >
-        <i class="fas fa-folder-plus"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-folder-plus"></i>
+        </div>         
         Administración de Farmacia
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -441,7 +457,7 @@
                             '/gestion_hospitalaria/administracion_de_farmacia/categoria/mostrar_categoria'
                     "
             class="nav-link"
-          >Categoria</router-link>
+          >Categoría</router-link>
           <router-link
             :to="
                         prefijo +
@@ -489,7 +505,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseFormularioMSP"
       >
-        <i class="far fa-file-alt"></i>
+        <div class="sb-nav-link-icon">
+          <i class="far fa-file-alt"></i>
+        </div>        
         Formulario MSP
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -530,7 +548,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapsePacientes"
       >
-        <i class="fas fa-user-edit"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-user-edit"></i>
+        </div>
         Pacientes
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -597,7 +617,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseSeguros"
       >
-        <i class="fas fa-user-edit"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-business-time"></i>
+        </div> 
         Seguros
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -649,8 +671,10 @@
         aria-expanded="false"
         aria-controls="pagesCollapsePersonalMedico"
       >
-        <i class="fa fa-user-md"></i>
-        Personal Medico
+        <div class="sb-nav-link-icon">
+          <i class="fa fa-user-md"></i>
+        </div>
+        Personal Médico
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
         </div>
@@ -682,7 +706,7 @@
                                                 '/gestion_hospitalaria/administracion_de_hospital/personal_medico'
                                         "
             class="nav-link"
-          >Personal Medico</router-link>
+          >Personal Médico</router-link>
 
           <router-link
             :to="
@@ -690,14 +714,14 @@
                                                 '/gestion_hospitalaria/administracion_de_hospital/tipo_trabajadores'
                                         "
             class="nav-link"
-          >Tipos de Personal Medico</router-link>
+          >Tipos de Personal Médico</router-link>
           <router-link
             :to="
                                             prefijo +
                                                 '/gestion_hospitalaria/administracion_de_hospital/funciones_personal_medico'
                                         "
             class="nav-link"
-          >Funciones de Personal Medico</router-link>
+          >Funciones de Personal Médico</router-link>
         </nav>
       </div>
       <a
@@ -708,7 +732,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseAdministracionHospital"
       >
-        <i class="fas fa-hospital"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-hospital"></i>
+        </div> 
         Administración de Hospital
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -791,7 +817,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapsePacientes"
       >
-        <i class="fas fa-user-edit"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-user-edit"></i>
+        </div>
         Pacientes
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -858,7 +886,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseSeguros"
       >
-        <i class="fas fa-user-edit"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-business-time"></i>
+        </div> 
         Seguros
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -910,8 +940,10 @@
         aria-expanded="false"
         aria-controls="pagesCollapseAdministracionCitas"
       >
-        <i class="fas fa-calendar"></i>
-        Gestión de admisiones
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-calendar"></i>
+        </div>        
+        Gestión de Admisiones
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
         </div>
@@ -955,7 +987,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseConsultaExterna"
       >
-        <i class="fas fa-user-nurse"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-user-nurse"></i>
+        </div>          
         Consulta Externa
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -988,7 +1022,7 @@
                                                 '/gestion_hospitalaria/consulta_externa/jornadas'
                                         "
             class="nav-link"
-          >Horarios de medicos</router-link>
+          >Horarios de Médico</router-link>
           <router-link
             :to="
                                             prefijo +
@@ -1006,7 +1040,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseEmergencia"
       >
-        <i class="fas fa-first-aid"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-first-aid"></i>
+        </div> 
         Emergencia
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -1053,7 +1089,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseFarmacia"
       >
-        <i class="fas fa-folder-plus"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-folder-plus"></i>
+        </div>
         Administración de Farmacia
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -1086,7 +1124,7 @@
                             '/gestion_hospitalaria/administracion_de_farmacia/categoria/mostrar_categoria'
                     "
             class="nav-link"
-          >Categoria</router-link>
+          >Categoría</router-link>
           <router-link
             :to="
                         prefijo +
@@ -1126,8 +1164,10 @@
         aria-expanded="false"
         aria-controls="pagesCollapsePersonalMedico"
       >
-        <i class="fa fa-user-md"></i>
-        Personal Medico
+        <div class="sb-nav-link-icon">
+          <i class="fa fa-user-md"></i>
+        </div>
+        Personal Médico
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
         </div>
@@ -1159,7 +1199,7 @@
                                                 '/gestion_hospitalaria/administracion_de_hospital/personal_medico'
                                         "
             class="nav-link"
-          >Personal Medico</router-link>
+          >Personal Médico</router-link>
 
           <router-link
             :to="
@@ -1167,14 +1207,14 @@
                                                 '/gestion_hospitalaria/administracion_de_hospital/tipo_trabajadores'
                                         "
             class="nav-link"
-          >Tipos de Personal Medico</router-link>
+          >Tipos de Personal Médico</router-link>
           <router-link
             :to="
                                             prefijo +
                                                 '/gestion_hospitalaria/administracion_de_hospital/funciones_personal_medico'
                                         "
             class="nav-link"
-          >Funciones de Personal Medico</router-link>
+          >Funciones de Personal Médico</router-link>
         </nav>
       </div>
 
@@ -1186,7 +1226,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseConsultaExterna"
       >
-        <i class="fas fa-user-nurse"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-user-nurse"></i>
+        </div> 
         Consulta Externa
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -1237,7 +1279,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseEmergencia"
       >
-        <i class="fas fa-first-aid"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-first-aid"></i>
+        </div> 
         Emergencia
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -1281,7 +1325,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseConsultaExterna"
       >
-        <i class="fas fa-user-nurse"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-user-nurse"></i>
+        </div> 
         Consulta Externa
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>
@@ -1307,7 +1353,7 @@
                                                 '/gestion_hospitalaria/consulta_externa/jornadas'
                                         "
             class="nav-link"
-          >Horarios de medicos</router-link>
+          >Horarios de Médico</router-link>
           <router-link
             :to="
                                             prefijo +
@@ -1325,7 +1371,9 @@
         aria-expanded="false"
         aria-controls="pagesCollapseEmergencia"
       >
-        <i class="fas fa-first-aid"></i>
+        <div class="sb-nav-link-icon">
+          <i class="fas fa-first-aid"></i>
+        </div>
         Emergencia
         <div class="sb-sidenav-collapse-arrow">
           <i class="fas fa-angle-down"></i>

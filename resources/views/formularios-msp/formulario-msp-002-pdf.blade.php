@@ -569,7 +569,7 @@
     <table>
         <thead>
             <tr>
-                <th class="bordered">9 PLANES DE DIAGNOSTICO, TERAPEUTICOS Y EDUCACIONALES </th>
+                <th class="bordered">9 PLANES DE DIAGNÓSTICO, TERAPÉUTICOS Y EDUCACIONALES </th>
             </tr>
         </thead>
         <tbody>
@@ -600,7 +600,7 @@
                 <td></td>
                 <th></th>
                 <td></td>
-                <td style="font-size: 9px;text-align: center;">codigo</td>
+                <td style="font-size: 9px;text-align: center;">código</td>
                 <th></th>
                 <td></td>
             </tr>
@@ -622,7 +622,7 @@
                 <td></td>
                 <th style="background-color: #D2F0CA;" class="bordered">HORA FIN</th>
                 <td style="width: 8%;"></td>
-                <th style="width: 5%;background-color: #D2F0CA;" class="bordered">MEDICO</th>
+                <th style="width: 5%;background-color: #D2F0CA;" class="bordered">MÉDICO</th>
                 <td style="width: 20%;"></td>
                 <td style="width: 5%;"></td>
                 <th style="width: 5%;background-color: #D2F0CA;" class="bordered">FIRMA</th>
@@ -648,7 +648,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <th>(DIA/MES/AÑO)</th>
+                                <th>(DÍA/MES/AÑO)</th>
                             </tr>
                         </tbody>
                     </table>

@@ -80,6 +80,8 @@
                     this.$props.dataInformacionSistema.tipoIdentificacion ==
                         'CEDULA'
                 "
+                max="10"
+                min="10"
                 v-model="dataInformacionSistema.identificacionCedula"
                 type="number"
                 placeholder="Ingresar cedula del usuario..."
@@ -273,7 +275,7 @@ export default {
             password: "",
             passwordValid: false,
             alias: "ALIAS",
-            tipoIdentificacion: "Cedula",
+            tipoIdentificacion: "Cédula",
             selectedIdentificacion: "",
             identificacionCedula: "",
             identificacionPasaporte: "",
@@ -301,7 +303,7 @@ export default {
             selectedTrabajador: "",
             opcionesIdentificacion: [
                 {
-                    display: "Cedula",
+                    display: "Cédula",
                     value: "CEDULA"
                 },
                 {

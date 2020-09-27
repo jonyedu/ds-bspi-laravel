@@ -2,7 +2,7 @@
   <div class="row m-3">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <center>
-        <h5 class="mt-4">Jornada</h5>
+        <h5 class="mt-4">Jornadas</h5>
       </center>
     </div>
 
@@ -41,7 +41,7 @@
                   <v-time
                     @change="changeTimeInicio"
                     v-model="form.hora_inicio"
-                    placeholder="Hora inicio"
+                    placeholder="Hora Inicio"
                   ></v-time>
                 </div>
               </div>
@@ -86,13 +86,13 @@
 
                   <label class="ml-3" for="martes">Martes</label>
                   <input type="checkbox" id="martes" value="martes" v-model="form.martes" />
-                  <label class="ml-3" for="miercoles">Miercoles</label>
+                  <label class="ml-3" for="miercoles">Miércoles</label>
                   <input type="checkbox" id="miercoles" value="miercoles" v-model="form.miercoles" />
                   <label class="ml-3" for="jueves">Jueves</label>
                   <input type="checkbox" id="jueves" value="jueves" v-model="form.jueves" />
                   <label class="ml-3" for="viernes">Viernes</label>
                   <input type="checkbox" id="viernes" value="viernes" v-model="form.viernes" />
-                  <label class="ml-3" for="sabado">Sabado</label>
+                  <label class="ml-3" for="sabado">Sábado</label>
                   <input type="checkbox" id="sabado" value="sabado" v-model="form.sabado" />
                   <label class="ml-3" for="domingo">Domingo</label>
                   <input type="checkbox" id="domingo" value="domingo" v-model="form.domingo" />

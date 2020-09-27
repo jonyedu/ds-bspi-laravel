@@ -220,7 +220,7 @@ CREATE TABLE `categoria` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`CATEGORIA_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -430,7 +430,7 @@ CREATE TABLE `consultorios` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`CONSULTORIO_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -504,7 +504,7 @@ CREATE TABLE `detalle_movimiento` (
   KEY `detalle_movimiento_producto_detalle_cod_foreing_idx` (`PRODUCTO_DETALLE_COD`),
   CONSTRAINT `detalle_movimiento_movimiento_cod_foreing` FOREIGN KEY (`MOVIMIENTO_COD`) REFERENCES `movimiento` (`MOVIMIENTO_COD`),
   CONSTRAINT `detalle_movimiento_producto_detalle_cod_foreing` FOREIGN KEY (`PRODUCTO_DETALLE_COD`) REFERENCES `producto_detalle` (`PRODUCTO_DETALLE_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -841,7 +841,7 @@ CREATE TABLE `farmacia` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`FARMACIA_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1121,7 +1121,7 @@ CREATE TABLE `hospital_farmacia` (
   KEY `hosp_farm_hospital_cod_foregin_idx` (`HOSPITAL_COD`),
   CONSTRAINT `hosp_farm_farmacia_cod_foregin` FOREIGN KEY (`FARMACIA_COD`) REFERENCES `farmacia` (`FARMACIA_COD`),
   CONSTRAINT `hosp_farm_hospital_cod_foregin` FOREIGN KEY (`HOSPITAL_COD`) REFERENCES `hospital` (`HOSPITAL_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1341,7 +1341,7 @@ CREATE TABLE `movimiento` (
   PRIMARY KEY (`MOVIMIENTO_COD`),
   KEY `movimiento_tipomovimiento_cod_foregin_idx` (`TIPOMOVIMIENTO_COD`),
   CONSTRAINT `movimiento_tipomovimiento_cod_foregin` FOREIGN KEY (`TIPOMOVIMIENTO_COD`) REFERENCES `tipo_movimiento` (`TIPOMOVIMIENTO_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1576,7 +1576,7 @@ CREATE TABLE `prescripcion` (
   PRIMARY KEY (`PRESCRIPCION_COD`),
   KEY `prescripcion_cita_cod_foreing_idx` (`CITA_COD`),
   CONSTRAINT `prescripcion_cita_cod_foreing` FOREIGN KEY (`CITA_COD`) REFERENCES `citas` (`CITA_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1614,7 +1614,7 @@ CREATE TABLE `prescripcion_detalle` (
   KEY `presc_deta_producto_detalle_cod_foregin_idx` (`PRODUCTO_DETALLE_COD`),
   CONSTRAINT `presc_deta_prescripcion_cod_foregin` FOREIGN KEY (`PRESCRIPCION_COD`) REFERENCES `prescripcion` (`PRESCRIPCION_COD`),
   CONSTRAINT `presc_deta_producto_detalle_cod_foregin` FOREIGN KEY (`PRODUCTO_DETALLE_COD`) REFERENCES `producto_detalle` (`PRODUCTO_DETALLE_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1677,7 +1677,7 @@ CREATE TABLE `presentacion_producto` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`PRESENTACIONPRODUCTO_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1706,7 +1706,7 @@ CREATE TABLE `presentaciones` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`PRESENTACION_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1741,7 +1741,7 @@ CREATE TABLE `producto_detalle` (
   KEY `prod_deta_productos_cod_foregin_idx` (`PRESENTACIONPRODUCTO_COD`),
   CONSTRAINT `prod_deta_farmacia_cod_foregin` FOREIGN KEY (`FARMACIA_COD`) REFERENCES `farmacia` (`FARMACIA_COD`),
   CONSTRAINT `producto_detalle_ibfk_1` FOREIGN KEY (`PRESENTACIONPRODUCTO_COD`) REFERENCES `presentacion_producto` (`PRESENTACIONPRODUCTO_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1773,7 +1773,7 @@ CREATE TABLE `productos` (
   PRIMARY KEY (`PRODUCTO_COD`),
   KEY `productos_categoria_cod_foreign_idx` (`CATEGORIA_COD`),
   CONSTRAINT `productos_categoria_cod_foreign` FOREIGN KEY (`CATEGORIA_COD`) REFERENCES `categoria` (`CATEGORIA_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1833,7 +1833,7 @@ CREATE TABLE `tipo_movimiento` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`TIPOMOVIMIENTO_COD`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

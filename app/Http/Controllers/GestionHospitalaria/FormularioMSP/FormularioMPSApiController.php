@@ -15,7 +15,7 @@ class FormularioMPSApiController extends Controller
     public function cargarHistoriaClinicaTabla()
     {
         try {
-            $formularioMSP = User::orderBy('US_HISTORIACLINICACOD', 'asc')
+            $formularioMSP = User::orderBy('US_HISTORIACLINICACOD', 'desc')
                 ->where('USER_LOGIC_ESTADO', 'A')
                 ->where('US_HISTORIACLINICACOD', "!=", "null")
                 ->whereNotNull('US_HISTORIACLINICACOD')
@@ -67,7 +67,7 @@ class FormularioMPSApiController extends Controller
                         $i->where('ESTADOCITA_TIPO', 'C')->where('ESPECIALIDAD_COD', '!=', 'null');
                     }])
                     ->first();
-                  
+                //return $cita;  
                
                 /*Para llenar la session: 6 SIGNOS VITALES, 11 EVOLUCION Y PRESCRIPCIONES */
                  $citaArray = Cita::where('CITA_LOGIC_ESTADO', 'A')

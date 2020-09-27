@@ -3,7 +3,7 @@
     <h1>Agenda de Citas</h1>
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="form-group">
-        <label for="fecha_cita">Escoga la fecha para citas del dia escogido</label>
+        <label for="fecha_cita">Escoja la fecha para citas del día escogido</label>
         <input
           type="date"
           class="form-control"
@@ -25,12 +25,12 @@
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="row">
-              <div class="p-3 mb-2 table-success text-dark">Cita en curso</div>
+              <div class="p-3 mb-2 table-success text-dark">Cita en Curso</div>
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="row">
-              <div class="p-3 mb-2 table-light text-dark">Cita futura: Color Blanco</div>
+              <div class="p-3 mb-2 table-secondary text-dark">Cita Futura</div>
             </div>
           </div>
         </div>
@@ -103,13 +103,13 @@ export default {
         return "table-info";
       } else {
         if (fecha_cita > nowDate) {
-          return "table-light";
+          return "table-secondary";
         } else {
           if (hora_inicial < now && hora_final > now) {
             return "table-success";
           }
           if (hora_inicial > now && hora_final > now) {
-            return "table-light";
+            return "table-secondary";
           }
 
           if (hora_inicial < now && hora_final < now) {

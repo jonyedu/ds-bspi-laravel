@@ -155,7 +155,7 @@ export default {
           loader.hide();
           that.$swal({
             icon: "error",
-            title: "Existe un error",
+            title: "Existe un Error.",
             text: error
           });
         });
@@ -206,7 +206,7 @@ export default {
           loader.hide();
           that.$swal({
             icon: "error",
-            title: "Existe un error",
+            title: "Existe un Error.",
             text: error
           });
         });
@@ -222,8 +222,8 @@ export default {
           loader.hide();
           that.$swal({
             icon: "success",
-            title: "Proceso realizado exitosamente",
-            text: "Dato anulado correctamente."
+            title: "Proceso realizado exitosamente.",
+            text: "Dato Anulado Correctamente."
           });
         })
         .catch(error => {
@@ -297,7 +297,7 @@ export default {
           //Errores
           that.$swal({
             icon: "error",
-            title: "Existe un error",
+            title: "Existe un Error.",
             text: error
           });
         });
@@ -323,7 +323,7 @@ export default {
             //Errores
             that.$swal({
               icon: "error",
-              title: "Existe un error",
+              title: "Existe un Error.",
               text: error
             });
           });
@@ -350,7 +350,7 @@ export default {
 
           that.$swal({
             icon: "error",
-            title: "Existe un error",
+            title: "Existe un Error.",
             text: error
           });
         });
@@ -377,7 +377,7 @@ export default {
 
           that.$swal({
             icon: "error",
-            title: "Existe un error",
+            title: "Existe un Error.",
             text: error
           });
         });
@@ -404,7 +404,7 @@ export default {
 
           that.$swal({
             icon: "error",
-            title: "Existe un error",
+            title: "Existe un Error.",
             text: error
           });
         });

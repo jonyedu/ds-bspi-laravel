@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <h1 class="mt-2">Asociacion de Presentaciones y Productos</h1>
+    <h1 class="mt-2">Asociación de Presentaciones y Productos</h1>
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="card">
         <div class="card-body">

@@ -16,7 +16,7 @@
                         <!-- 1.) Cabeza -->
                         <div class="col-sm-2">
                             <div>
-                                <label>1.) Cabeza</label>
+                                <label>1. Cabeza</label>
                             </div>
                             <div
                                 class="custom-control custom-radio custom-control-inline"
@@ -60,7 +60,7 @@
                         <!-- 2.) Cuello -->
                         <div class="col-sm-2">
                             <div>
-                                <label>2.) Cuello</label>
+                                <label>2. Cuello</label>
                             </div>
                             <div
                                 class="custom-control custom-radio custom-control-inline"
@@ -104,7 +104,7 @@
                         <!-- 3.) Torax -->
                         <div class="col-sm-2">
                             <div>
-                                <label>3.) Torax</label>
+                                <label>3. Torax</label>
                             </div>
                             <div
                                 class="custom-control custom-radio custom-control-inline"
@@ -148,7 +148,7 @@
                         <!-- 4.) Abdomen -->
                         <div class="col-sm-2">
                             <div>
-                                <label>4.) Abdomen</label>
+                                <label>4. Abdomen</label>
                             </div>
                             <div
                                 class="custom-control custom-radio custom-control-inline"
@@ -192,7 +192,7 @@
                         <!-- 5.) Pelvis -->
                         <div class="col-sm-2">
                             <div>
-                                <label>5.) Pelvis</label>
+                                <label>5. Pelvis</label>
                             </div>
                             <div
                                 class="custom-control custom-radio custom-control-inline"
@@ -236,7 +236,7 @@
                         <!-- 6.) Extremides -->
                         <div class="col-sm-2">
                             <div>
-                                <label>6.) Extremides</label>
+                                <label>6. Extremidades</label>
                             </div>
                             <div
                                 class="custom-control custom-radio custom-control-inline"
@@ -290,7 +290,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> 1.) Descripción de Cabeza</label>
+                                <label><span class="text-danger">(*)</span> 1. Descripción de Cabeza</label>
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -312,7 +312,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> 2.) Descripción de Cuello</label>
+                                <label><span class="text-danger">(*)</span> 2. Descripción de Cuello</label>
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -334,7 +334,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> 3.) Descripción de Torax</label>
+                                <label><span class="text-danger">(*)</span> 3. Descripción de Torax</label>
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -356,7 +356,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> 4.) Descripción de Abdomen</label>
+                                <label><span class="text-danger">(*)</span> 4. Descripción de Abdomen</label>
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -378,7 +378,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> 5.) Descripción de Pelvis</label>
+                                <label><span class="text-danger">(*)</span> 5. Descripción de Pelvis</label>
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -400,13 +400,13 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label> <span class="text-danger">(*)</span> 6.) Descripción de Extremides</label>
+                                <label> <span class="text-danger">(*)</span> 6. Descripción de Extremidades</label>
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
                                     type="te"
                                     class="form-control"
-                                    placeholder="Descripción de Extremides...."
+                                    placeholder="Descripción de Extremidades...."
                                     rows="4"
                                     v-model="
                                         form.EXAMENFISICO_EXTREMIDADES_CP_DESCRIPCION
@@ -697,7 +697,7 @@ export default {
                     loader.hide();
                     that.$swal({
                         icon: "error",
-                        title: "Existe un error",
+                        title: "Existe un Error.",
                         text: error
                     });
                 });
@@ -712,15 +712,9 @@ export default {
                 let that = this;
                 if (opc == 1) {
                     //Modificar
-                    /* url =
-            "/gestion_hospitalaria/administracion_cita/guardar_modificar_examen_fisico/" +
-            idCita; */
                     that.mensaje = "Datos modificados correctamente.";
                 } else {
                     //Guardar
-                    /* url =
-            "/gestion_hospitalaria/administracion_cita/guardar_examen_fisico/" +
-            idCita; */
                     that.mensaje = "Datos guardados correctamente.";
                 }
                 var loader = that.$loading.show();
@@ -758,7 +752,7 @@ export default {
                         if (error.response.status === 421) {
                             that.$swal({
                                 icon: "error",
-                                title: "Existe un error",
+                                title: "Existe un Error.",
                                 text: error.response.data.msg
                             });
                         }
@@ -768,8 +762,8 @@ export default {
                 let that = this;
                 that.$swal({
                     icon: "error",
-                    title: "Citas",
-                    text: "No hay Citas Disponibles"
+                    title: "Citas.",
+                    text: "No hay Citas Disponibles."
                 });
             }
         }

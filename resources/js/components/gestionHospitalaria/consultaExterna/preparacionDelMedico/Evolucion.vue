@@ -25,7 +25,7 @@
                                             ? 'form-control'
                                             : 'form-control is-invalid'
                                     "
-                                    placeholder="Evolucion del Paciente...."
+                                    placeholder="Evolución del Paciente...."
                                     rows="3"
                                     v-model="form.frm_evolucion"
                                 />

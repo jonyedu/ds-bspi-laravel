@@ -6,7 +6,7 @@
                 class="card-header"
                 style="background-color:#C2C2C2;color:#000000;"
             >
-                <h5 class="card-title">Prescripcion</h5>
+                <h5 class="card-title">Prescripción</h5>
             </div>
             <div class="card-body">
                 <form role="form">
@@ -116,14 +116,14 @@
                             <!-- Observacion -->
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 mt-2">
-                                    <label for>Observacion:</label>
+                                    <label for>Observación:</label>
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-8 mt-2">
                                     <div class="form-inline">
                                         <textarea
                                             type="text"
                                             class="form-control"
-                                            placeholder="Observacion para el medicamento"
+                                            placeholder="Observación para el medicamento"
                                             rows="3"
                                             cols="100"
                                             v-model="form.frm_observacion"
@@ -207,7 +207,7 @@ export default {
                     type: "String"
                 },
                 {
-                    label: "Categoria",
+                    label: "Categoría",
                     field: "col_categoria",
                     type: "String"
                 },
@@ -295,17 +295,28 @@ export default {
             //Día
             var d = date.getDate();
 
+            d = this.addZero(d);
+            m = this.addZero(m);
+
             //Hora
             var h = date.getHours();
             //Minuto
             var mi = date.getMinutes();
             //Segundo
             var s = date.getSeconds();
+            
             //Lo ordenas a gusto.
             var fechaActual = y + "/" + m + "/" + d;
             var horaActual = h + ":" + mi + ":" + s;
             this.form.frm_fecha_transaccion = fechaActual;
             this.form.frm_hora_transaccion = horaActual;
+        },
+        //Funcion para añadir el 0 al mes y día de la fecha
+        addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
         },
         //Metodo para guardar datos a la tabla
         guardarModificarPrescripcion: function(opc) {
@@ -357,7 +368,7 @@ export default {
                 .catch(error => {
                     that.$swal({
                         icon: "error",
-                        title: "Error al Procesar",
+                        title: "Error al Procesar.",
                         text: error
                     });
                     //Errores de validación
@@ -389,8 +400,8 @@ export default {
                         loader.hide();
                         that.$swal({
                             icon: "error",
-                            title: "Existe un error",
-                            text: "No hay Firmas Registradas"
+                            title: "Existe un Error.",
+                            text: "No hay Firmas Registradas."
                         });
                     } else {
                         that.form.frm_paciente_firma =
@@ -405,7 +416,7 @@ export default {
                     loader.hide();
                     that.$swal({
                         icon: "error",
-                        title: "Existe un error",
+                        title: "Existe un Error.",
                         text: error
                     });
                 });
@@ -505,7 +516,7 @@ export default {
                     loader.hide();
                     that.$swal({
                         icon: "error",
-                        title: "Existe un error",
+                        title: "Existe un Error",
                         text: error
                     });
                 });
@@ -553,7 +564,7 @@ export default {
                         //Errores
                         that.$swal({
                             icon: "error",
-                            title: "Existe un error",
+                            title: "Existe un Error.",
                             text: error
                         });
                         loader.hide();
@@ -603,7 +614,7 @@ export default {
                         //Errores
                         this.$swal({
                             icon: "error",
-                            title: "Existe un error",
+                            title: "Existe un Error.",
                             text: error
                         });
                         //loader.hide();
@@ -679,7 +690,7 @@ export default {
             if (this.form.frm_fecha_transaccion == "") {
                 this.$swal({
                     icon: "error",
-                    title: "Existe un error",
+                    title: "Existe un Error",
                     text:
                         "Por favor elija una fecha realizar el movimiento de productos"
                 });
@@ -690,7 +701,7 @@ export default {
                 this.$swal({
                     icon: "error",
                     title: "Existe un error",
-                    text: "Se necesita la Farmacia"
+                    text: "Se necesita la farmacia."
                 });
                 return;
             }
@@ -699,7 +710,7 @@ export default {
                 this.$swal({
                     icon: "error",
                     title: "Existe un error",
-                    text: "Se necesita el Producto"
+                    text: "Se necesita el producto."
                 });
                 return;
             }
@@ -708,7 +719,7 @@ export default {
                 this.$swal({
                     icon: "error",
                     title: "Existe un error",
-                    text: "Se necesita la Cantidad"
+                    text: "Se necesita la cantidad."
                 });
                 return;
             }
@@ -717,7 +728,7 @@ export default {
                 this.$swal({
                     icon: "error",
                     title: "Existe un error",
-                    text: "Se necesita que la Cantidad sea mayor a 0"
+                    text: "Se necesita que la cantidad sea mayor a 0."
                 });
                 return;
             }
@@ -726,7 +737,7 @@ export default {
                 this.$swal({
                     icon: "error",
                     title: "Existe un error",
-                    text: "El Producto, no tiene Stock"
+                    text: "El producto, no tiene stock"
                 });
                 return;
             }
@@ -771,9 +782,9 @@ export default {
             } else {
                 this.$swal({
                     icon: "error",
-                    title: "Existe un error",
+                    title: "Existe un error.",
                     text:
-                        "El producto que intenta añadir, ya se encuentra en la tabla"
+                        "El producto que intenta añadir, ya se encuentra en la tabla."
                 });
             }
         },
@@ -808,7 +819,7 @@ export default {
                     icon: "error",
                     title: "Existe un error",
                     text:
-                        "El producto que intenta añadir, ya se encuentra en la tabla"
+                        "El producto que intenta añadir, ya se encuentra en la tabla."
                 });
             }
             let index = null;

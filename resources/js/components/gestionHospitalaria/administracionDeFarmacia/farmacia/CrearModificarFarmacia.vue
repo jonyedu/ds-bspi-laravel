@@ -2,7 +2,7 @@
     <div class="row m-3">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <center>
-                <h5 class="mt-4">FARMACIA</h5>
+                <h5 class="mt-4">Farmacia</h5>
             </center>
         </div>
 
@@ -26,7 +26,7 @@
                                                 : 'form-control is-invalid'
                                         "
                                         id="cicloInicial"
-                                        placeholder="Ingrese un nombre para la Farmacia"
+                                        placeholder="Ingrese un nombre"
                                         v-model="form.frm_nombre"
                                     />
                                     <small
@@ -39,24 +39,24 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12">
                                 <div class="form-group">
-                                    <label for="contacto">Telefono</label>
+                                    <label for="contacto">Teléfono</label>
                                     <input
                                         type="text"
                                         class="form-control"
                                         id="contacto"
-                                        placeholder="Ingrese el telefono de la Farmacia"
+                                        placeholder="Ingrese el teléfono"
                                         v-model="form.frm_telefono"
                                     />
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12">
                                 <div class="form-group">
-                                    <label for="direccion">Direccion</label>
+                                    <label for="direccion">Dirección</label>
                                     <input
                                         type="text"
                                         id="telefono"
                                         class="form-control"
-                                        placeholder="Ingrese La Dirección del la Farmacia"
+                                        placeholder="Ingrese dirección"
                                         v-model="form.frm_direccion"
                                     />
                                 </div>
@@ -65,7 +65,7 @@
                                 <div class="form-group">
                                     <label for="correo"
                                         ><span class="text-danger">(*)</span
-                                        >Email</label
+                                        >Correo Electrónico</label
                                     >
                                     <input
                                         type="text"
@@ -74,7 +74,7 @@
                                                 ? 'form-control'
                                                 : 'form-control is-invalid'
                                         "
-                                        placeholder="Ingrese El Correo del la Farmacia"
+                                        placeholder="Ingrese correo electrónico"
                                         v-model="form.frm_email"
                                     />
                                     <small
@@ -87,12 +87,12 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12">
                                 <div class="form-group">
-                                    <label for="webpage">Pagina Web</label>
+                                    <label for="webpage">Página Web</label>
                                     <input
                                         type="text"
                                         id="webpage"
                                         class="form-control"
-                                        placeholder="Ingrese la Pagina Web de la Farmacia"
+                                        placeholder="Ingrese página web"
                                         v-model="form.frm_pagina_web"
                                     />
                                 </div>
@@ -104,7 +104,7 @@
                                         type="text"
                                         id="observacion"
                                         class="form-control"
-                                        placeholder="Ingrese una observación para la Farmacia"
+                                        placeholder="Ingrese observación"
                                         v-model="form.frm_observacion"
                                     />
                                 </div>

@@ -41,7 +41,7 @@
                                     :readonly="tipoPersonal != 1"
                                     type="text"
                                     class="form-control"
-                                    placeholder="Acedentes Personales...."
+                                    placeholder="Antecedentes Personales...."
                                     rows="4"
                                     v-model="form.frm_antecedentePersonal"
                                 />
@@ -77,7 +77,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="defaultInline1"
-                                                        >1.) Cardiopatía</label
+                                                        >1. Cardiopatía</label
                                                     >
                                                 </div>
                                             </div>
@@ -105,7 +105,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="defaultInline2"
-                                                        >2.) Diabetes</label
+                                                        >2. Diabetes</label
                                                     >
                                                 </div>
                                             </div>
@@ -133,7 +133,7 @@
                                                         class="custom-control-label"
                                                         for="defaultInline3"
                                                     >
-                                                        3.) Enf. C. Vascular
+                                                        3. Enf. C. Vascular
                                                     </label>
                                                 </div>
                                             </div>
@@ -160,7 +160,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="defaultInline4"
-                                                        >4.) Hipertensión</label
+                                                        >4. Hipertensión</label
                                                     >
                                                 </div>
                                             </div>
@@ -185,7 +185,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="defaultInline5"
-                                                        >5.) Cáncer</label
+                                                        >5. Cáncer</label
                                                     >
                                                 </div>
                                             </div>
@@ -213,7 +213,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="defaultInline6"
-                                                        >6.) Tuberculosis</label
+                                                        >6. Tuberculosis</label
                                                     >
                                                 </div>
                                             </div>
@@ -240,7 +240,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="defaultInline7"
-                                                        >7.) Enf. Mental</label
+                                                        >7. Enf. Mental</label
                                                     >
                                                 </div>
                                             </div>
@@ -269,7 +269,7 @@
                                                         class="custom-control-label"
                                                         for="defaultInline8"
                                                     >
-                                                        8.) Enf. Infecciosa
+                                                        8. Enf. Infecciosa
                                                     </label>
                                                 </div>
                                             </div>
@@ -296,7 +296,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="defaultInline9"
-                                                        >9.) Malfomación</label
+                                                        >9. Mal Formación</label
                                                     >
                                                 </div>
                                             </div>
@@ -321,7 +321,7 @@
                                                     <label
                                                         class="custom-control-label"
                                                         for="defaultInline10"
-                                                        >10.) Otro</label
+                                                        >10. Otro</label
                                                     >
                                                 </div>
                                             </div>
@@ -363,7 +363,7 @@
                             <div class="form-group">
                                 <label
                                     ><span class="text-danger">(*)</span>
-                                    Revisión Actual de Organos y Sistema</label
+                                    Revisión Actual de Órganos y Sistema</label
                                 >
                                 <textarea
                                     type="text"
@@ -371,7 +371,7 @@
                                         tipoPersonal != 1 || $props.readOnly
                                     "
                                     class="form-control"
-                                    placeholder="Revision Actual de Organos y Sistemas...."
+                                    placeholder="Revisión Actual de Órganos y Sistemas...."
                                     rows="4"
                                     v-model="
                                         form.frm_revisionActualOrganoSistema

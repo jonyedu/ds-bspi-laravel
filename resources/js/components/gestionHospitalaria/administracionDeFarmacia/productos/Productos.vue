@@ -54,7 +54,7 @@ export default {
           type: "String",
         },
         {
-          label: "Categoria",
+          label: "Categoría",
           field: "CATEGORIA_NOM",
           type: "String",
         },

@@ -203,10 +203,10 @@
                 <td class="text-center" colspan="4"><strong>TELÉFONO: {{$prescripcion->hospital->HOSPITAL_TELF_CONTACTO}}</strong></td>
             </tr>
             <tr>
-                <td class="text-center" colspan="4"><strong>CORREO ELECTRONICO: {{$prescripcion->hospital->HOSPITAL_EMAIL_CONTACTO}}</strong></td>
+                <td class="text-center" colspan="4"><strong>CORREO ELECTRÓNICO: {{$prescripcion->hospital->HOSPITAL_EMAIL_CONTACTO}}</strong></td>
             </tr>
             <tr>
-                <td class="text-center" colspan="4"><strong>PAGINA WEB: {{$prescripcion->hospital->HOSPITAL_WEB_PAGE}}</strong></td>
+                <td class="text-center" colspan="4"><strong>PÁGINA WEB: {{$prescripcion->hospital->HOSPITAL_WEB_PAGE}}</strong></td>
             </tr>
             <tr>
                 <td class="text-center" colspan="4"><strong>FECHA: {{ $fecha }} </strong></td>
@@ -216,13 +216,13 @@
                 <td style="height: 15px;" class="text-center" colspan="4"><strong>HOSPITAL:</strong></td>
             </tr>
             <tr>
-                <td class="text-center" colspan="4"><strong>TELEFONO:</strong></td>
+                <td class="text-center" colspan="4"><strong>TELÉFONO:</strong></td>
             </tr>
             <tr>
-                <td class="text-center" colspan="4"><strong>CORREO:</strong></td>
+                <td class="text-center" colspan="4"><strong>CORREO ELECTRÓNICO: </strong></td>
             </tr>
             <tr>
-                <td class="text-center" colspan="4"><strong>PAGINA WEB:</strong></td>
+                <td class="text-center" colspan="4"><strong>PÁGINA WEB:</strong></td>
             </tr>
             <tr>
                 <td class="text-center" colspan="4"><strong>FECHA:</strong></td>
@@ -247,7 +247,7 @@
             </tr>
             <tr>
                 <td class="text-left" colspan="4"><strong>FECHA NACIMIENTO: {{$prescripcion->cita->paciente->US_FNAC}}</strong></td>
-                <td class="text-right" colspan="4"><strong>CORREO: {{$prescripcion->medico[0]->user->email}}</strong></td>
+                <td class="text-right" colspan="4"><strong>CORREO ELECTRÓNICO: {{$prescripcion->medico[0]->user->email}}</strong></td>
             </tr>
             <tr>
                 <td class="text-left" colspan="4"><strong>EDAD: {{$edadPaciente}} </strong></td>
@@ -264,7 +264,7 @@
             </tr>
             <tr>
                 <td class="text-left" colspan="4"><strong>FECHA NACIMIENTO:</strong></td>
-                <td class="text-right" colspan="4"><strong>CORREO:</strong></td>
+                <td class="text-right" colspan="4"><strong>CORREO ELECTRÓNICO:</strong></td>
             </tr>
             <tr>
                 <td class="text-left" colspan="4"><strong>EDAD:</strong></td>
@@ -278,7 +278,7 @@
             <tr>
                 <!-- <th class="bordered">#</th> -->
                 <th class="bordered">Producto</th>
-                <th class="bordered">Observacion</th>
+                <th class="bordered">Observación</th>
                 <th class="bordered">Precio</th>
                 <th class="bordered">Cantidad</th>
                 <th class="bordered">Subtotal</th>

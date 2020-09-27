@@ -42,7 +42,7 @@ class JornadaApiController extends Controller
                     $days=$days.' Martes,';
                 }
                 if($value->JORNADATRABAJADOR_MIERCOLES=='A'){
-                    $days=$days.' Miercoles,';
+                    $days=$days.' Miércoles,';
                 }
                 if($value->JORNADATRABAJADOR_JUEVES=='A'){
                     $days=$days.' Jueves,';
@@ -51,7 +51,7 @@ class JornadaApiController extends Controller
                     $days=$days.' Viernes,';
                 }
                 if($value->JORNADATRABAJADOR_SABADO=='A'){
-                    $days=$days.' Sabado,';
+                    $days=$days.' Sábado,';
                 }
                 if($value->JORNADATRABAJADOR_DOMINGO=='A'){
                     $days=$days.' Domingo,';

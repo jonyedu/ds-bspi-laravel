@@ -21,18 +21,18 @@
                   type="button"
                   class="btn btn-secondary"
                   @click="mostrarComponenteListaUsuarios()"
-                > <i class="fas fa-address-book"></i>Ver Pacientes</button>
+                > <i class="fas fa-address-book"></i> Ver Pacientesfrer</button>
                 
                 <button
                   type="button"
                   class="btn btn-danger"
                   @click="mostrarComponenteCrearAdmision()"
-                ><i class="fas fa-user-injured"></i>Ingresar Paciente</button>
+                ><i class="fas fa-user-injured"></i> Ingresar Paciente</button>
                 <button
                   type="button"
                   class="btn btn-info"
                   @click="mostrarComponenteAsignacionSeguro()"
-                ><i class="fas fa-paste"></i>Crear Admisión</button>
+                ><i class="fas fa-paste"></i> Crear Admisión</button>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default {
     };
   },
   mounted: function() {
-    this.titulo_seleccionado = "Lista Admisiones";
+    this.titulo_seleccionado = "Listas de Admisiones";
     this.componente_seleccionado="ListaAdmisiones";
     this.titulo_mensaje= "Información del formulario de lista de admisiones";
     this.linea_uno="El formulario muestra las admisiones registradas en el sistema, se poseen los siguientes filtros:"

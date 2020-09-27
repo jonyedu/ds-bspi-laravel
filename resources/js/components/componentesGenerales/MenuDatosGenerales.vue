@@ -17,7 +17,9 @@
                 aria-expanded="false"
                 aria-controls="pagesCollapseGeneralidades"
             >
-                <i class="fas fa-cogs"></i>
+                <div class="sb-nav-link-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
                 Generalidades
                 <div class="sb-sidenav-collapse-arrow">
                     <i class="fas fa-angle-down"></i>
@@ -93,7 +95,9 @@
                 aria-expanded="false"
                 aria-controls="pagesCollapseUsuario"
             >
-                <i class="fas fa-user-edit"></i>
+                <div class="sb-nav-link-icon">
+                    <i class="fas fa-user-edit"></i>
+                </div>                
                 Usuario
                 <div class="sb-sidenav-collapse-arrow">
                     <i class="fas fa-angle-down"></i>
@@ -131,7 +135,9 @@
                 aria-expanded="false"
                 aria-controls="pagesCollapseGestiones"
             >
-                <i class="fas fa-tasks"></i>
+                <div class="sb-nav-link-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>                 
                 Gestiones
                 <div class="sb-sidenav-collapse-arrow">
                     <i class="fas fa-angle-down"></i>
@@ -170,7 +176,9 @@
                 aria-expanded="false"
                 aria-controls="pagesCollapseLogs"
             >
-                <i class="fas fa-clipboard-list"></i>
+                <div class="sb-nav-link-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>                 
                 Logs
                 <div class="sb-sidenav-collapse-arrow">
                     <i class="fas fa-angle-down"></i>
@@ -198,7 +206,9 @@
                 aria-expanded="false"
                 aria-controls="pagesCollapseConfiguraciones"
             >
-                <i class="fas fa-cogs"></i>
+                <div class="sb-nav-link-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>                 
                 Configuraciones
                 <div class="sb-sidenav-collapse-arrow">
                     <i class="fas fa-angle-down"></i>
@@ -317,6 +327,22 @@
                         class="nav-link"
                         >Grupos Culturales</router-link
                     >
+                    <router-link
+                        :to="
+                            prefijo +
+                                '/datos_generales/configuraciones/mostrar_tipo_unidad'
+                        "
+                        class="nav-link"
+                        >Tipo de Unidad</router-link
+                    >
+                    <router-link
+                        :to="
+                            prefijo +
+                                '/datos_generales/configuraciones/mostrar_unidad'
+                        "
+                        class="nav-link"
+                        >Unidad</router-link
+                    >
                 </nav>
             </div>
         </nav>
@@ -334,7 +360,9 @@
                 aria-expanded="false"
                 aria-controls="pagesCollapseGeneralidades"
             >
-                <i class="fas fa-cogs"></i>
+                <div class="sb-nav-link-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
                 Generalidades
                 <div class="sb-sidenav-collapse-arrow">
                     <i class="fas fa-angle-down"></i>
@@ -381,7 +409,9 @@
                 aria-expanded="false"
                 aria-controls="pagesCollapseGeneralidades"
             >
-                <i class="fas fa-cogs"></i>
+                <div class="sb-nav-link-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
                 Generalidades
                 <div class="sb-sidenav-collapse-arrow">
                     <i class="fas fa-angle-down"></i>

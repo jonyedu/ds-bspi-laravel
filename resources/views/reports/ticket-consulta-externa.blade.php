@@ -83,13 +83,13 @@
                 <td class="text-center" colspan="4"><strong>HOSPITAL: {{'LEON BECERRA'}}</strong></td>
             </tr>
             <tr>
-                <td class="text-center" colspan="4"><strong>TELEFONO: {{'0978658899'}}</strong></td>
+                <td class="text-center" colspan="4"><strong>TELÉFONO: {{'0978658899'}}</strong></td>
             </tr>
             <tr>
-                <td class="text-center" colspan="4"><strong>CORREO: {{'PRUEBA@GMAIL.COM'}}</strong></td>
+                <td class="text-center" colspan="4"><strong>CORREO ELECTRÓNICO: {{'PRUEBA@GMAIL.COM'}}</strong></td>
             </tr>
             <tr>
-                <td class="text-center" colspan="4"><strong>PAGINA WEB: {{''}}</strong></td>
+                <td class="text-center" colspan="4"><strong>PÁGINA WEB: {{''}}</strong></td>
             </tr>
             <tr>
                 <td class="text-center" colspan="4"><strong>FECHA: {{ $dato->date }} </strong></td>
@@ -99,7 +99,7 @@
     <br>
     <br>
     <p>Estimado Sr(a), {{$dato->cita->paciente->FULL_NAME}}.</p>
-    <p>Se genero el ticket número {{$dato->numero_ticket}}, para su ingreso por consulta externa con fecha {{$dato->date}} con el/la Dr(a). {{$dato->doctor->user->FULL_NAME}} para la especialidad {{$dato->especialidad->ESPECIALIDAD_NOM}}, por favor diríjase a la sala de espera para seguir con el proceso.</p>
+    <p>Se generó el ticket número <span style="font-weight: bolder;">{{$dato->numero_ticket}}</span>, para su ingreso por consulta externa con fecha {{$dato->date}} con el/la Dr(a). {{$dato->doctor->user->FULL_NAME}} para la especialidad {{$dato->especialidad->ESPECIALIDAD_NOM}}, por favor diríjase a la sala de espera para seguir con el proceso.</p>
     <p>Tenga en cuenta las siguientes recomendaciones.</p>
     <ol>
         <li>Portar sus documentos de identificación personal.</li>

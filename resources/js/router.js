@@ -22,6 +22,8 @@ import Movilizaciones from "./components/datosGenerales/configuraciones/Moviliza
 import Discapacidades from "./components/datosGenerales/configuraciones/Discapacidades.vue";
 import Casas from "./components/datosGenerales/configuraciones/Casas.vue";
 import GruposCulturales from "./components/datosGenerales/configuraciones/GruposCulturales.vue";
+import TipoDeUnidad from "./components/datosGenerales/configuraciones/tipoUnidad/TipoUnidad.vue";
+import Unidad from "./components/datosGenerales/configuraciones/Unidad/Unidad.vue";
 import TiposDeOrganizacion from "./components/datosGenerales/configuraciones/TiposDeOrganizacion.vue";
 import Provincias from "./components/datosGenerales/configuraciones/provincias/Provincias.vue";
 import Cantones from "./components/datosGenerales/configuraciones/cantones/Cantones.vue";
@@ -204,6 +206,18 @@ export default new VueRouter({
                 prefijo +
                 "/datos_generales/configuraciones/mostrar_grupos_culturales",
             component: GruposCulturales
+        },
+        {
+            path:
+                prefijo +
+                "/datos_generales/configuraciones/mostrar_tipo_unidad",
+            component: TipoDeUnidad
+        },
+        {
+            path:
+                prefijo +
+                "/datos_generales/configuraciones/mostrar_unidad",
+            component: Unidad
         },
         {
             path:

@@ -105,7 +105,9 @@ class PrescripcionApiController extends Controller
                         'fecha' => $dateImpresion . ' ' . $timeImpresion
                     ]);
 
-                    //Ruta para guardar en el servidor 
+                    //Codigo para enviar la prescripcion al paciente por correo electrónico
+
+                    /* //Ruta para guardar en el servidor 
                     $destinationPath = public_path('reports/prescripciones/');
                     //Concatenar la ruta y el nombre del archivo
                     $rutaSave = $destinationPath . $nombreArchivo;
@@ -125,7 +127,7 @@ class PrescripcionApiController extends Controller
                             //Enviar la prescripcion vía Email al paciente
                             Mail::to($datosPaciente->paciente->email)->send(new EnvioPrescripcion($rutaSave, $datosPaciente->paciente));
                         }
-                    }
+                    } */
 
                     return $pdf->stream($nombreArchivo);
                 } else {

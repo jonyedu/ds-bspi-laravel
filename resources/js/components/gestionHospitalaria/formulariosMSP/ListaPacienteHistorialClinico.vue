@@ -5,7 +5,7 @@
                 class="card-header"
                 style="background-color:#C2C2C2;color:#000000;"
             >
-                <h5 class="card-title">Pacientes con Historial Clinico</h5>
+                <h5 class="card-title">Pacientes con Historial Clínico</h5>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -52,12 +52,12 @@ export default {
                     type: "String"
                 },
                 {
-                    label: "# Identificacion",
+                    label: "# Identificación",
                     field: "FULL_IDENTIFICATION",
                     type: "String"
                 },
                 {
-                    label: "# Historia Clinica",
+                    label: "# Historia Clínica",
                     field: "US_HISTORIACLINICACOD",
                     type: "String"
                 }
@@ -98,7 +98,16 @@ export default {
                         loader.hide();
                     } else {
                         //Obtenemos los pacientes con historial clinico
-                        that.pacienteArray = response.data.formularioMSP;
+                        let formularioMSP = [];
+                        response.data.formularioMSP.forEach(formulariosMSP => {
+                            let objeto = {};
+                            objeto.id = formulariosMSP.id;
+                            objeto.FULL_NAME = that.$funcionesGlobales.toCapitalFirstAllWords(formulariosMSP.FULL_NAME);
+                            objeto.FULL_IDENTIFICATION = formulariosMSP.FULL_IDENTIFICATION;
+                            objeto.US_HISTORIACLINICACOD = formulariosMSP.US_HISTORIACLINICACOD;
+                            formularioMSP.push(objeto);
+                        });
+                        that.pacienteArray = formularioMSP;
                         loader.hide();
                     }
                 })

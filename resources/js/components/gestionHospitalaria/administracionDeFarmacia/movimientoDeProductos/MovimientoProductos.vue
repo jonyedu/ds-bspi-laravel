@@ -55,7 +55,7 @@
                                 "
               >
                 <div class="form-group">
-                  <label for="tipo"><label class="text-danger">(*)</label> Farmacia Origen</label>
+                  <label for="tipo"><label class="text-danger">(*)</label> Farmacia Orígen</label>
                   <v-select
                     v-model="selectedFarmaciaOrigen"
                     :value="form.frm_farmacia_cod_origen"
@@ -104,7 +104,7 @@
                   <textarea
                     type="text"
                     class="form-control"
-                    placeholder="Descripcion del Movimiento...."
+                    placeholder="Descripción del Movimiento...."
                     rows="2"
                     v-model="form.frm_descripcion"
                   />
@@ -129,7 +129,7 @@
               <!-- Categoria -->
               <div class="col-sm-3">
                 <div class="form-group">
-                  <label for="tipo"><label class="text-danger">(*)</label> Categoria</label>
+                  <label for="tipo"><label class="text-danger">(*)</label> Categoría</label>
                   <v-select
                     v-model="selectedCategoria"
                     :value="form.frm_categoria_cod"
@@ -165,7 +165,7 @@
               <!-- PresentacionProductos -->
               <div class="col-sm-3">
                 <div class="form-group">
-                  <label for="tipo"><label class="text-danger">(*)</label> Presentacion de Producto</label>
+                  <label for="tipo"><label class="text-danger">(*)</label> Presentación de Producto</label>
                   <v-select
                     v-model="selectedPresentacionProducto"
                     :options="presentacionproductos"
@@ -581,7 +581,6 @@ export default {
       }
     },
     setSelectedPresentacionProducto(value) {
-      alert(value);
       if (value !== null) {
         this.form.frm_presentacionproducto_cod = this.selectedPresentacionProducto.PRESENTACIONPRODUCTO_COD;
         if (this.form.frm_tipo_movimiento_abrev != "ING") {

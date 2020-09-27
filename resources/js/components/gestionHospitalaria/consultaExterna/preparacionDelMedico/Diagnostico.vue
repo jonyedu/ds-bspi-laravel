@@ -6,7 +6,7 @@
                 class="card-header"
                 style="background-color:#C2C2C2;color:#000000;"
             >
-                <h5 class="card-title">Diagnostico</h5>
+                <h5 class="card-title">Diagnóstico</h5>
             </div>
             <div class="card-body">
                 <form role="form">
@@ -30,7 +30,7 @@
                                     :class="'form-control'"
                                     :readonly="true"
                                     id="acompanante"
-                                    placeholder="(*) Seleccione el diagnostico Principal"
+                                    placeholder="(*) Seleccione el diagnóstico Principal"
                                     v-model="form.frm_diagnostico_principal"
                                 />
                             </div>
@@ -95,7 +95,7 @@
                                     :class="'form-control'"
                                     :readonly="true"
                                     id="acompanante"
-                                    placeholder="Seleccione el diagnostico Asociado (1)"
+                                    placeholder="Seleccione el diagnóstico Asociado (1)"
                                     v-model="form.frm_diagnostico_uno"
                                 />
                             </div>
@@ -160,7 +160,7 @@
                                     :class="'form-control'"
                                     :readonly="true"
                                     id="acompanante"
-                                    placeholder="Seleccione el diagnostico Asociado (2)"
+                                    placeholder="Seleccione el diagnóstico Asociado (2)"
                                     v-model="form.frm_diagnostico_dos"
                                 />
                             </div>
@@ -224,13 +224,13 @@
                                                 ><label class="text-danger"
                                                     >(*)</label
                                                 >
-                                                Signos - Sintomas Actual</label
+                                                Signos - Síntomas Actual</label
                                             >
                                             <textarea
                                                 :disabled="$props.readOnly"
                                                 type="text"
                                                 class="form-control"
-                                                placeholder="Signos - Sintomas Actual...."
+                                                placeholder="Signos - Síntomas Actual...."
                                                 rows="4"
                                                 v-model="form.frm_signo_sintoma"
                                             />

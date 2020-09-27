@@ -19,7 +19,7 @@ export const funcionesGlobales = {
                     fullIdentificacion +
                     "&usCod=" +
                     usCod +
-                    '">Actualizar Clave</a>'
+                    '">Actualizar Contraseña</a>'
             });
             //prueba
             return;

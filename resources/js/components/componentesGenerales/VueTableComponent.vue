@@ -175,6 +175,27 @@
                             }}</span>
                         </div>
                     </span>
+                    <!-- Para mostrar color en los estados de Signos Vitales -->
+                    <span v-else-if="props.column.field == 'signo_vital'">
+                        <div
+                            v-if="
+                                props.row.signo_vital == 'Registrado'
+                            "
+                        >
+                            <span style="font-weight: bold; color: #0C9C05;">{{
+                                props.row.signo_vital
+                            }}</span>
+                        </div>
+                        <div
+                            v-else-if="
+                                props.row.signo_vital == 'Pendiente'
+                            "
+                        >
+                            <span style="font-weight: bold; color: red;">{{
+                                props.row.signo_vital
+                            }}</span>
+                        </div>
+                    </span>
                     <span v-else-if="props.column.field == 'estado_actual'">
                         <div>
                             <span style="font-weight: bold; color: blue;">{{
@@ -276,7 +297,7 @@ export default {
             }
             if (!encontrado) {
                 this.$data.columns.unshift({
-                    label: "Accciones",
+                    label: "Acciones",
                     field: "actions",
                     html: true
                 });

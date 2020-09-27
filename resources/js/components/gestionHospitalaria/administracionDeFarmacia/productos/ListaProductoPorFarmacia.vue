@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
-            <h1 class="mt-4">PRODUCTOS POR FARMACIA</h1>
+            <h1 class="mt-4">Producto por Farmacia</h1>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">

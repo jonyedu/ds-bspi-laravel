@@ -159,14 +159,14 @@
                     v-if="tipoPersonal == 1"
                     type="button"
                     class="btn btn-outline-primary"
-                    @click="mostrarComponentePrescripcion()"
-                  >Prescripción</button>
+                    @click="mostrarComponenteEvolucion()"
+                  >Evolución</button>
                   <button
                     v-if="tipoPersonal == 1"
                     type="button"
                     class="btn btn-outline-primary"
-                    @click="mostrarComponenteEvolucion()"
-                  >Evolución</button>
+                    @click="mostrarComponentePrescripcion()"
+                  >Prescripción</button>
                   <button
                     v-if="tipoPersonal == 1 && false"
                     type="button"
@@ -324,14 +324,14 @@
     </div>
     <!-- Fin Seccion donde muestra los submenus: Signos Vitales, Motivo/Antecedentes, Examen Físico, Diagnostico, Prescripción, Evolución, Laboratorio Clinico, Imageneologia, Firma -->
     
-    <!-- Seccion donde muestra la imgane cuando no se haya aun seleccionado un paciente -->
-    <div class="col-lg-12 col-md-12 col-sm-12" style="max-height:600px;" v-if="idCita == null">
+    <!-- Seccion donde muestra la imagen cuando no se haya aun seleccionado un paciente -->
+    <div class="col-lg-12 col-md-12 col-sm-12" style="max-height:600px;margin-top:65px" v-if="idCita == null">
       <img src="/icon/Business.jpg" height="100%" width="25%" style="display:block;margin:auto;" alt="Logo">
     </div>
     <!-- Fin Seccion donde muestra la imgane cuando no se haya aun seleccionado un paciente -->
     
     <!-- Seccion donde muestra la lista de los pacientes que tienen una cita -->
-    <modal :width="'65%'" height="auto" :scrollable="true" name="listaConsultaExterna">
+    <modal :width="'80%'" height="auto" :scrollable="true" name="listaConsultaExterna">
       <lista-cita-consulta-externa
         ref="listaConsultaExterna"
         @handleSeleccionarClick="handleSeleccionarClick"
@@ -693,7 +693,7 @@ export default {
     },
     mostrarComponenteEvolucion() {
       this.respuestaImprimir = 0;
-      this.titulo_seleccionado = "Evolucion";
+      this.titulo_seleccionado = "Evolución";
       this.componente_seleccionado = "Evolucion";
       this.respuestaGuardarModificar = 0;
       if (this.$refs.Evolucion != null) {
@@ -711,7 +711,7 @@ export default {
     },
     mostrarComponenteDiagnostico() {
       this.respuestaImprimir = 0;
-      this.titulo_seleccionado = "Diagnostico";
+      this.titulo_seleccionado = "Diagnóstico";
       this.componente_seleccionado = "Diagnostico";
       if (this.$refs.Diagnostico != null) {
         this.$refs.Diagnostico.cargarDiagnostico();

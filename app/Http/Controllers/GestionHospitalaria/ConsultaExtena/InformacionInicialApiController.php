@@ -37,14 +37,14 @@ class InformacionInicialApiController extends Controller
     public function guardarModificarSignoVital(Request $request, $idCita)
     {
         $request->validate([
-            'temperatura' => 'required|numeric|min:0|max:42',
-            'pulso' => 'required|numeric|min:0|max:150',
-            'presion_arterial' => 'required|string|min:0',
-            'respiracion' => 'required|numeric|min:0|max:30',
-            'peso' => 'required|numeric|min:0|max:999',
-            'estatura' => 'required|numeric|min:0|max:250',
-            'talla' => 'required|numeric|min:0',
-            'superficie_corporal' => 'required|numeric|min:0',
+            'temperatura' => 'required|numeric|min:35|max:37.3',
+            'pulso' => 'required|numeric|min:60|max:90',
+            'presion_arterial' => 'required|string|min:60|max:110',
+            'respiracion' => 'required|numeric|min:6|max:12',
+            'peso' => 'numeric|min:0|max:200',
+            'estatura' => 'numeric|min:0|max:210',
+            'talla' => 'numeric|min:0',
+            'superficie_corporal' => 'numeric|min:0',
         ]);
         try {
             $user = Auth::user();
