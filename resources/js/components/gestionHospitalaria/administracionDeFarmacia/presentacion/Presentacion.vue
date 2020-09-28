@@ -154,6 +154,9 @@ export default {
             let objeto = {
               PRESENTACION_COD: response.data.presentaciones[i].PRESENTACION_COD,
               PRESENTACION_NOM: that.$funcionesGlobales.toCapitalFirstAllWords(response.data.presentaciones[i].PRESENTACION_NOM),
+              PRESENTACION_CANTIDAD: response.data.presentaciones[i].PRESENTACION_CANTIDAD,
+              UNIDAD_COD: response.data.presentaciones[i].unidad.UNIDAD_COD,
+              UNIDAD_SIMB: response.data.presentaciones[i].unidad.UNIDAD_SIMB,
               PRESENTACION_UNIDAD: response.data.presentaciones[i].PRESENTACION_UNIDAD
             }
             presentaciones.push(objeto);                       

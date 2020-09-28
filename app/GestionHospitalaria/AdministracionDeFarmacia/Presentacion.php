@@ -20,6 +20,11 @@ class Presentacion extends Model
         return $this->hasMany('App\GestionHospitalaria\AdministracionDeFarmacia\PresentacionProducto', 'PRESENTACION_COD', 'PRESENTACION_COD');
     }
 
+    public function unidad()
+    {
+        return $this->setConnection('mysql')->hasOne('App\DatosGenerales\Configuraciones\Unidad', 'UNIDAD_COD', 'UNIDAD_COD');
+    }
+
     public function getPRESENTACIONFULLPRECIOattribute()
     {
         return $this->PRESENTACION_NOM.'- Unidad: '.$this->PRESENTACION_UNIDAD;

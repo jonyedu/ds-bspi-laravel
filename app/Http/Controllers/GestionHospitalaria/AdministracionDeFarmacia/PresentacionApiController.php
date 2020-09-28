@@ -12,14 +12,10 @@ use Illuminate\Support\Facades\DB;
 
 class PresentacionApiController extends Controller
 {
-    //
-
-    
-
     public static function cargarPresentaciones(Request $request){
         try {
             
-            $presentaciones=Presentacion::where('PRESENTACION_LOGIC_ESTADO','A')
+            $presentaciones=Presentacion::with('unidad')->where('PRESENTACION_LOGIC_ESTADO','A')
             ->get();
             
             return response()->json(['presentaciones' => $presentaciones], 200);
@@ -41,12 +37,12 @@ class PresentacionApiController extends Controller
         }
     }
 
-
     public function guardarPresentacion(Request $request){
         
         $request->validate([
             'presentacion_nombre' =>  "required|string|max:250",
-            'presentacion_unidad'=> "required|string|max:20"
+            'frm_cantidad' =>  "required|string|max:250",
+            'frm_unidad_codigo'=> "required|numeric|max:20"
             ]);
         
         $presentacion_nombre=$request->input('presentacion_nombre');
@@ -60,19 +56,17 @@ class PresentacionApiController extends Controller
         if($exists->count()>0)
         {
             return response()->json(['mensaje' => 'Ya existe esta esta asociacion!'], 500);
-        }
-        
-           
+        }       
        
         try {
             DB::beginTransaction();
             $user = Auth::user();
             Presentacion::Create(
-                [
-                    'PRESENTACION_NOM'=>$presentacion_nombre,
-                    'PRESENTACION_UNIDAD'=>is_null($presentacion_unidad)  ? '' : $presentacion_unidad,
-                    
-                    
+                [   
+                    'PRESENTACION_NOM'=>$presentacion_nombre,    
+                    'PRESENTACION_CANTIDAD'=>$request->input('frm_cantidad'),  
+                    'UNIDAD_COD'=>$request->input('frm_unidad_codigo'),     
+                    'PRESENTACION_UNIDAD'=>$request->input('frm_cantidad') . ' ' . $request->input('frm_simbologo') ,         
                     'PRESENTACION_LOGIC_ESTADO'=>'A',
                     'US_COD_CREATED_UPDATED' => $user->US_COD,
                 ]
@@ -89,10 +83,9 @@ class PresentacionApiController extends Controller
         $estado = 'I';
         
         $request->validate([
-            'presentacion_codigo' => 'required|integer',
-            'presentacion_unidad'=> "required|string|max:20"
-            
-            
+            'presentacion_nombre' =>  "required|string|max:250",
+            'frm_cantidad' =>  "required|string|max:250",
+            'frm_unidad_codigo'=> "required|numeric|max:20"
     ]);
         $presentacion_cod=$request->input('presentacion_codigo');
         $presentacion_nombre=$request->input('presentacion_nombre');
@@ -106,8 +99,10 @@ class PresentacionApiController extends Controller
             $user = Auth::user();
             Presentacion::where('PRESENTACION_COD',$presentacion_cod)->update(
                 [
-                    'PRESENTACION_NOM'=>$presentacion_nombre,
-                    'PRESENTACION_UNIDAD'=>is_null($presentacion_unidad)  ? '' : $presentacion_unidad,                    
+                    'PRESENTACION_NOM'=>$presentacion_nombre,    
+                    'PRESENTACION_CANTIDAD'=>$request->input('frm_cantidad'),  
+                    'UNIDAD_COD'=>$request->input('frm_unidad_codigo'),     
+                    'PRESENTACION_UNIDAD'=>$request->input('frm_cantidad') . ' ' . $request->input('frm_simbologo') ,        
                     'PRESENTACION_LOGIC_ESTADO'=>'A',
                     'US_COD_CREATED_UPDATED' => $user->US_COD,
                 ]

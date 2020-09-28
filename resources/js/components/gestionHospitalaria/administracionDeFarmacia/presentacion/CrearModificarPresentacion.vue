@@ -2,7 +2,7 @@
   <div class="row m-3">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <center>
-        <h5 class="mt-4">Presentacion</h5>
+        <h5 class="mt-4">Presentación</h5>
       </center>
     </div>
 
@@ -11,7 +11,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 p-5">
           <form>
             <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="form-group">
                   <label for="nombre"><span class="text-danger">(*)</span> Nombre</label>
                   <input
@@ -33,25 +33,25 @@
                   >{{errores.err_nombre[0] }}</small>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-12">
+              <div class="col-lg-2 col-md-2 col-sm-12">
                 <div class="form-group">
                   <label for="nombre"><span class="text-danger">(*)</span> Cantidad</label>
                   <input
-                    type="text"
+                    type="number"
                     :class="
-                                            errores.err_unidad === ''
+                                            errores.err_cantidad === ''
                                                 ? 'form-control'
                                                 : 'form-control is-invalid'
                                         "
                     id="cicloInicial"
-                    placeholder="Ingrese un unidad"
-                    v-model="form.presentacion_unidad"
+                    placeholder="Ingrese cantidad"
+                    v-model="form.frm_cantidad"
                   />
                   <small
-                    v-if="errores.err_unidad !== ''"
+                    v-if="errores.err_cantidad !== ''"
                     id="correoHelp"
                     class="text-danger"
-                  >{{errores.err_unidad[0] }}</small>
+                  >{{errores.err_cantidad[0] }}</small>
                 </div>
               </div>
               <div class="col-lg-2 col-md-2 col-sm-12">
@@ -59,6 +59,11 @@
                   <label for="nombre"><span class="text-danger">(*)</span> Unidad</label>
                   <v-select
                     v-model="selectedUnidad"
+                    :class="
+                                            errores.err_unidad_codigo === ''
+                                                ? ''
+                                                : 'form-control is-invalid'
+                                        "
                     :value="form.frm_unidad_codigo"
                     :options="unidad"
                     label="display"
@@ -67,10 +72,10 @@
                     <template slot="no-options">No se ha encontrado ningun dato</template>
                   </v-select>
                   <small
-                    v-if="errores.err_unidad_cod !== ''"
+                    v-if="errores.err_unidad_codigo !== ''"
                     id="tipoHelp"
                     class="text-danger"
-                  >{{ errores.err_unidad_cod[0] }}</small>
+                  >{{ errores.err_unidad_codigo[0] }}</small>
                 </div>
               </div>
             </div>
@@ -112,14 +117,18 @@ export default {
         err_nombre: "",
         err_unidad: "",
         err_precio: "",
-        err_unidad_cod: ""
+        err_unidad_codigo: "",
+        err_cantidad: "",
+        err_simbologo: "",
       },
       form: {
         presentacion_codigo: "",
         presentacion_nombre: "",
         presentacion_unidad: "",
         presentacion_precio: "",
-        frm_unidad_codigo: ""
+        frm_unidad_codigo: "",
+        frm_cantidad: "",
+        frm_simbologo: "",
       },
     };
   },
@@ -129,11 +138,13 @@ export default {
       var presentacion = this.$props.presentacionMod;
       this.form.presentacion_codigo = presentacion.PRESENTACION_COD;
       this.form.presentacion_nombre = presentacion.PRESENTACION_NOM;
+      this.form.frm_cantidad = presentacion.PRESENTACION_CANTIDAD;
       this.form.presentacion_unidad = presentacion.PRESENTACION_UNIDAD;
 
       /*Unidad */
-      this.form.frm_unidad_codigo = productos.UNIDAD_COD;
-      this.selectedUnidad = productos.UNIDAD_NOM;
+      this.form.frm_unidad_codigo = presentacion.UNIDAD_COD;
+      this.selectedUnidad = presentacion.UNIDAD_SIMB;
+      this.form.frm_simbologo = presentacion.UNIDAD_SIMB;
     }
     let nombreModulo = this.$nombresModulo.datos_generales;
     let nombreFormulario = this.$nombresFormulario.datos_generales.generalidades
@@ -160,14 +171,18 @@ export default {
         err_nombre: "",
         err_unidad: "",
         err_precio: "",
-        err_unidad_cod: ""
+        err_unidad_codigo: "",
+        err_cantidad: "",
+        err_simbologo: "",
       };
       this.form = {
         presentacion_codigo: "",
         presentacion_nombre: "",
         presentacion_unidad: "",
         presentacion_precio: "",
-        frm_unidad_codigo: ""
+        frm_unidad_codigo: "",
+        frm_cantidad: "",
+        frm_simbologo: "",
       };
     },
     setSelectedUnidad(value) {
@@ -177,6 +192,7 @@ export default {
         "/datos_generales/configuraciones/cargar_unidad";
       if (value != null) {
         this.form.frm_unidad_codigo = value.unidad_codigo;
+        this.form.frm_simbologo = value.display;
       }
       axios
         .get(url)
@@ -205,7 +221,6 @@ export default {
       let that = this;
       let url = "";
       let mensaje = "";
-      //if()
       if (this.$props.presentacionMod !== null) {
         url =
           "/gestion_hospitalaria/administracion_farmacia/modificar_presentacion";
@@ -236,6 +251,14 @@ export default {
             if (error.response.data.errors.presentacion_nombre != null) {
               that.errores.err_nombre =
                 error.response.data.errors.presentacion_nombre;
+            }
+            if (error.response.data.errors.frm_cantidad != null) {
+              that.errores.err_cantidad =
+                error.response.data.errors.frm_cantidad;
+            }
+            if (error.response.data.errors.frm_unidad_codigo != null) {
+              that.errores.err_unidad_codigo =
+                error.response.data.errors.frm_unidad_codigo;
             }
             loader.hide();
           }
