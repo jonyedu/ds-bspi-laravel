@@ -46,7 +46,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 mt-2" v-if="horas_validas">
                 <div class="form-group">
-                    <label for="medico">Medico</label>
+                    <label for="medico">Médico</label>
                     <v-select
                         v-model="selectedMedico"
                         :value="form.id_doctor"
@@ -173,12 +173,8 @@ export default {
 
                     for (let i = 0; i < response.data.length; i++) {
                         let objeto = {
-                            display:
-                                response.data[i].user.US_NOM +
-                                " " +
-                                response.data[i].user.US_APELL,
-                            value:
-                                response.data[i].TRABAJADORESPERSONALSALUD_COD
+                            display: that.$funcionesGlobales.toCapitalFirstAllWords(response.data[i].user.US_NOM +" " + response.data[i].user.US_APELL),
+                            value: response.data[i].TRABAJADORESPERSONALSALUD_COD
                         };
                         doctores.push(objeto);
                     }
@@ -226,9 +222,8 @@ export default {
             ) {
                 this.$swal({
                     icon: "info",
-                    title:
-                        "Existen validaciones del formulario que debe completar",
-                    text: "Seleccione una Fecha de cita"
+                    title:"Existen validaciones del formulario que debe completar.",
+                    text: "Seleccione una fecha de cita."
                 });
                 this.existenErroresForm = true;
                 return;
@@ -245,9 +240,8 @@ export default {
             if (this.form.fecha_cita < fechaActual) {
                 this.$swal({
                     icon: "info",
-                    title:
-                        "Existen validaciones del formulario que debe completar.",
-                    text: "La fecha de la cita no es correcta"
+                    title:"Existen validaciones del formulario que debe completar.",
+                    text: "La fecha de la cita no es correcta."
                 });
                 this.existenErroresForm = true;
                 return;
@@ -259,9 +253,8 @@ export default {
             ) {
                 this.$swal({
                     icon: "info",
-                    title:
-                        "Existen validaciones del formulario que debe completar",
-                    text: "Seleccione una Hora de Inicio"
+                    title:"Existen validaciones del formulario que debe completar.",
+                    text: "Seleccione una hora de inicio."
                 });
                 this.existenErroresForm = true;
                 return;
@@ -273,9 +266,8 @@ export default {
             ) {
                 this.$swal({
                     icon: "info",
-                    title:
-                        "Existen validaciones del formulario que debe completar",
-                    text: "Seleccione una Hora de Cierre"
+                    title:"Existen validaciones del formulario que debe completar.",
+                    text: "Seleccione una hora de cierre."
                 });
                 this.existenErroresForm = true;
                 return;
@@ -288,9 +280,8 @@ export default {
                 if (this.form.hora_inicio < hora_actual) {
                     this.$swal({
                         icon: "info",
-                        title:
-                            "Existen validaciones del formulario que debe completar.",
-                        text: "La hora 'desde' no es correcta"
+                        title:"Existen validaciones del formulario que debe completar.",
+                        text: "La hora 'desde' no es correcta."
                     });
                     this.existenErroresForm = true;
                     return;
@@ -319,7 +310,7 @@ export default {
                     icon: "info",
                     title:
                         "Existen validaciones del formulario que debe completar",
-                    text: "Seleccione un Medico"
+                    text: "Seleccione un Médico"
                 });
                 this.existenErroresForm = true;
                 return;
@@ -338,14 +329,12 @@ export default {
                 this.hora_cierre_data.m !== ""
             ) {
                 if (hora_inicio > parseInt(this.hora_cierre_data.H)) {
-                    mensaje =
-                        "La hora de inicio es mayor que la hora de cierre";
+                    mensaje ="La hora de inicio es mayor que la hora de cierre.";
                     return mensaje;
                 }
                 if (hora_inicio == parseInt(this.hora_cierre_data.H)) {
                     if (minuto_inicio > parseInt(this.hora_cierre_data.m)) {
-                        mensaje =
-                            "Las horas son las mismas, sin embargo el minuto de inicio es mayor que el de cierre";
+                        mensaje ="Las horas son las mismas, sin embargo el minuto de inicio es mayor que el de cierre.";
                         return mensaje;
                     }
                 }
@@ -368,14 +357,12 @@ export default {
                 this.hora_inicio_data.m !== ""
             ) {
                 if (hora_cierre < parseInt(this.hora_inicio_data.H)) {
-                    mensaje =
-                        "La hora de cierre es menor que la hora de inicio";
+                    mensaje ="La hora de cierre es menor que la hora de inicio.";
                     return mensaje;
                 }
                 if (hora_cierre == parseInt(this.hora_inicio_data.H)) {
                     if (minuto_cierre < parseInt(this.hora_inicio_data.m)) {
-                        mensaje =
-                            "Las horas son las mismas, sin embargo el minuto de cierre es menor que el de inicio";
+                        mensaje ="Las horas son las mismas, sin embargo el minuto de cierre es menor que el de inicio.";
                         return mensaje;
                     }
                 }
@@ -395,7 +382,7 @@ export default {
                 this.horas_validas = false;
                 this.$swal({
                     icon: "info",
-                    title: "Validación",
+                    title: "Validación.",
                     text: mensaje
                 });
             } else {
@@ -414,7 +401,7 @@ export default {
                 this.form.hora_cierre = "";
                 this.$swal({
                     icon: "info",
-                    title: "Validación",
+                    title: "Validación.",
                     text: mensaje
                 });
             } else {
@@ -437,7 +424,7 @@ export default {
             if (this.existenErroresForm) {
                 return;
             }
-            /* let that = this;
+            let that = this;
       let url = "";
       let mensaje = "";
       url = "/gestion_hospitalaria/administracion_cita/crear_cita";
@@ -451,7 +438,7 @@ export default {
           that.$emit("recargarDatosConsultaExterna");
           that.$swal({
             icon: "success",
-            title: "Proceso realizado exitosamente",
+            title: "Proceso realizado exitosamente.",
             text: "Datos actualizados correctamente."
           });
         })
@@ -466,13 +453,12 @@ export default {
           }else{
             that.$swal({
               icon: "error",
-              title: "Existen errores",
+              title: "Existen errores.",
               text: error
             });
           }
-          loader.hide();
-         
-        }); */
+          loader.hide();         
+        });
         }
     }
 };

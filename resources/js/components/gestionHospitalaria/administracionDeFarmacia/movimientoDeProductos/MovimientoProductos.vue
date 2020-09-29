@@ -368,10 +368,19 @@ export default {
       //Día
       var d = date.getDate();
 
+      d = this.addZero(d);
+      m = this.addZero(m);
       //Lo ordenas a gusto.
-      var fechaActual = y + "-" + m + "-" + d;
+      var fechaActual = y + "/" + m + "/" + d;
       this.form.frm_fecha_transaccion = fechaActual;
     },
+    //Funcion para añadir el 0 al mes y día de la fecha
+      addZero(i) {
+          if (i < 10) {
+              i = "0" + i;
+          }
+          return i;
+      },
     //Metodos para obtener y agregar datos a los comboBox
     setSelectedTipoMovimiento(value) {
       let that = this;

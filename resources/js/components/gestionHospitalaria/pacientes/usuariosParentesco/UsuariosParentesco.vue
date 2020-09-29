@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
-       <h1 class="mt-4">USUARIOS PARENTESCOS</h1>
+       <h1 class="mt-4">Usuarios Parentesco</h1>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="card">
@@ -227,10 +227,10 @@ export default {
                   objeto.codigo_usuario=element.PARENTESCO_COD;
                   objeto.codigo_usuario_con_parentesco = element.USER_ID;
                   objeto.tipo_parentesco=element.TIPOPARENTESCO_COD;
-                  objeto.observacion= element.PARENTESCO_OBS;
-                  objeto.full_name_identification_usuario= element.parentesco.FULL_NAME_IDENTIFICACION;
-                  objeto.full_name_identification_usuario_con_parentesco=element.usuario_parentesco.FULL_NAME_IDENTIFICATION;
-                  objeto.tipo_parentesco_name= element.tipo_parentesco.TIPOPARENTESCO_NOM;
+                  objeto.observacion= that.$funcionesGlobales.toCapitalFirstAllWords(element.PARENTESCO_OBS);
+                  objeto.full_name_identification_usuario= that.$funcionesGlobales.toCapitalFirstAllWords(element.parentesco.FULL_NAME_IDENTIFICACION);
+                  objeto.full_name_identification_usuario_con_parentesco = that.$funcionesGlobales.toCapitalFirstAllWords(element.usuario_parentesco.FULL_NAME_IDENTIFICATION);
+                  objeto.tipo_parentesco_name= that.$funcionesGlobales.toCapitalFirstAllWords(element.tipo_parentesco.TIPOPARENTESCO_NOM);
                   datosFinales.push(objeto);
               });
               that.datos = datosFinales;

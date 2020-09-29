@@ -39,7 +39,7 @@ class InformacionInicialApiController extends Controller
         $request->validate([
             'temperatura' => 'required|numeric|min:0|max:40',
             'pulso' => 'required|numeric|min:60|max:90',
-            'presion_arterial' => 'required|string|min:60|max:110',
+            'presion_arterial' => 'required|numeric|min:60|max:110',
             'respiracion' => 'required|numeric|min:6|max:30',
             'peso' => 'numeric|min:0|max:200',
             'estatura' => 'numeric|min:0|max:210',

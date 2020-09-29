@@ -2,7 +2,7 @@
   <div class="row m-3">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <center>
-        <h5 class="mt-4">DATOS EXTRA USUARIO</h5>
+        <h5 class="mt-4">Datos Extra Usuario</h5>
       </center>
     </div>
 
@@ -13,7 +13,7 @@
             <div class="row">
               <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="form-group">
-                  <label for="email">Email</label>
+                  <label for="email">Correo Electrónico</label>
                   <input
                     :readonly="true"
                     type="text"
@@ -25,7 +25,7 @@
               </div>
               <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="form-group">
-                  <label for="email2">Email2</label>
+                  <label for="email2">Correo Electrónico Alternativo</label>
                   <input
                     :readonly="true"
                     type="text"
@@ -49,7 +49,7 @@
               </div>
               <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="form-group">
-                  <label for="telefono">Telefono</label>
+                  <label for="telefono">Teléfono</label>
                   <input
                     :readonly="true"
                     type="text"

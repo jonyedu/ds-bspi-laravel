@@ -12,6 +12,14 @@
             <div class="card-body">
                 <form role="form">
                     <div class="row">
+                        <div
+                            class="col-lg-12 col-md-12 col-sm-12 alert alert-primary"
+                            role="alert"
+                        >
+                            <b>Tenga en consideración lo siguiente</b><br>
+                            *CP es: Con evidencia de Patología.<br>
+                            *SP es: Sin evidencia de Patología.
+                        </div>
                         <!-- Inicio de los radio -->
                         <!-- 1.) Cabeza -->
                         <div class="col-sm-2">
@@ -290,7 +298,10 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> 1. Descripción de Cabeza</label>
+                                <label
+                                    ><span class="text-danger">(*)</span> 1.
+                                    Descripción de Cabeza</label
+                                >
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -312,7 +323,10 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> 2. Descripción de Cuello</label>
+                                <label
+                                    ><span class="text-danger">(*)</span> 2.
+                                    Descripción de Cuello</label
+                                >
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -334,7 +348,10 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> 3. Descripción de Torax</label>
+                                <label
+                                    ><span class="text-danger">(*)</span> 3.
+                                    Descripción de Torax</label
+                                >
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -356,7 +373,10 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> 4. Descripción de Abdomen</label>
+                                <label
+                                    ><span class="text-danger">(*)</span> 4.
+                                    Descripción de Abdomen</label
+                                >
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -378,7 +398,10 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label><span class="text-danger">(*)</span> 5. Descripción de Pelvis</label>
+                                <label
+                                    ><span class="text-danger">(*)</span> 5.
+                                    Descripción de Pelvis</label
+                                >
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -400,7 +423,10 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label> <span class="text-danger">(*)</span> 6. Descripción de Extremidades</label>
+                                <label>
+                                    <span class="text-danger">(*)</span> 6.
+                                    Descripción de Extremidades</label
+                                >
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
@@ -680,11 +706,16 @@ export default {
                             that.form.seleccion_radio_extremides = "SP";
                             that.form.EXAMENFISICO_EXTREMIDADES_SP = 1;
                         }
-                        that.form.EXAMENFISICO_CABEZA_CP_DESCRIPCION = response.data.examenFisico.EXAMENFISICO_CABEZA_CP_DESCRIPCION;
-                        that.form.EXAMENFISICO_CUELLO_CP_DESCRIPCION = response.data.examenFisico.EXAMENFISICO_CUELLO_CP_DESCRIPCION;
-                        that.form.EXAMENFISICO_TORAX_CP_DESCRIPCION = response.data.examenFisico.EXAMENFISICO_TORAX_CP_DESCRIPCION;
-                        that.form.EXAMENFISICO_ABDOMEN_CP_DESCRIPCION = response.data.examenFisico.EXAMENFISICO_ABDOMEN_CP_DESCRIPCION;
-                        that.form.EXAMENFISICO_PELVIS_CP_DESCRIPCION = response.data.examenFisico.EXAMENFISICO_PELVIS_CP_DESCRIPCION;
+                        that.form.EXAMENFISICO_CABEZA_CP_DESCRIPCION =
+                            response.data.examenFisico.EXAMENFISICO_CABEZA_CP_DESCRIPCION;
+                        that.form.EXAMENFISICO_CUELLO_CP_DESCRIPCION =
+                            response.data.examenFisico.EXAMENFISICO_CUELLO_CP_DESCRIPCION;
+                        that.form.EXAMENFISICO_TORAX_CP_DESCRIPCION =
+                            response.data.examenFisico.EXAMENFISICO_TORAX_CP_DESCRIPCION;
+                        that.form.EXAMENFISICO_ABDOMEN_CP_DESCRIPCION =
+                            response.data.examenFisico.EXAMENFISICO_ABDOMEN_CP_DESCRIPCION;
+                        that.form.EXAMENFISICO_PELVIS_CP_DESCRIPCION =
+                            response.data.examenFisico.EXAMENFISICO_PELVIS_CP_DESCRIPCION;
                         loader.hide();
                     }
                     that.$emit(

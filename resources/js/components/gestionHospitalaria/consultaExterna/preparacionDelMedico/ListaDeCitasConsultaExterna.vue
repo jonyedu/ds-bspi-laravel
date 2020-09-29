@@ -51,22 +51,25 @@ export default {
           label: "Fecha",
           field: "fecha_cita",
           type: "String",
-          width: "15%"
+          width: "20%"
         },
         {
           label: "Hora Inicio",
           field: "hora_inicio",
-          type: "String"
+          type: "String",
+          width: "7%"
         },
         {
           label: "Hora Final",
           field: "hora_final",
-          type: "String"
+          type: "String",
+          width: "7%"
         },
         {
           label: "Signos Vitales",
           field: "signo_vital",
-          type: "String"
+          type: "String",
+          width: "7%"
         }
       ]
     };

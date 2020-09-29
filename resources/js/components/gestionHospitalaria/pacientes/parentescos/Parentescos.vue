@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
-      <h1 class="mt-4">PARENTESCOS</h1>
+      <h1 class="mt-4">Parentesco</h1>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="card">
@@ -164,7 +164,18 @@ export default {
         .get(url)
         .then(function(response) {
               let datos = [];
-              datos = response.data.datos;
+              for (let i = 0; i < response.data.datos.length; i++) {
+                let objeto = {
+                  codigo: response.data.datos[i].codigo,
+                  nombre: that.$funcionesGlobales.toCapitalFirstAllWords(response.data.datos[i].nombre),
+                  apellido: that.$funcionesGlobales.toCapitalFirstAllWords(response.data.datos[i].apellido),
+                  identificacion: response.data.datos[i].identificacion,
+                  tipo_identificacion: response.data.datos[i].tipo_identificacion,
+                  observacion: that.$funcionesGlobales.toCapitalFirstAllWords(response.data.datos[i].observacion),
+                  TIPO_IDENTIFICACION_NOM: response.data.datos[i].TIPO_IDENTIFICACION_NOM,
+                }
+                datos.push(objeto);                       
+              }
               that.datos = datos;
               loader.hide();
         })

@@ -12,6 +12,14 @@
                 <form role="form">
                     <!-- Seccion para realizar la seleccion del diagnostico principal -->
                     <div class="row">
+                        <div
+                            class="col-lg-12 col-md-12 col-sm-12 alert alert-primary"
+                            role="alert"
+                        >
+                            <b>Tenga en consideración lo siguiente</b><br>
+                            *Presuntivo es cuando se busca un patrón que se relacione a las alteraciones encontradas entre las enfermedades conocidas durante sus años de estudio o experiencias.<br>
+                            *Definitivo es cuando se llega después de obtener los resultados de pruebas, como análisis de sangre y biopsias, las cuales se realizan para determinar si hay presencia de cierta enfermedad o afección.
+                        </div>
                         <div class="col-lg-8 col-md-8 col-sm-8 mt-2">
                             <div class="form-inline">
                                 <div class="btn-group" role="group">

@@ -86,7 +86,7 @@ export default {
           type: "String",
         },
         {
-          label: "Dias Aplicados",
+          label: "Días Aplicados",
           field: "JORNADATRABAJADOR_DIAS",
           type: "String",
         },

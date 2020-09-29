@@ -351,7 +351,7 @@
                                     "
                                     type="text"
                                     class="form-control"
-                                    placeholder="Enfermedad Actual o problema...."
+                                    placeholder="Enfermedad Actual o Problema...."
                                     rows="4"
                                     v-model="form.frm_enfermedadActualProblema"
                                 />

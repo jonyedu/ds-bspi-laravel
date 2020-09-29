@@ -120,7 +120,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="form-group">
-                <label for="email_alternativo">Correo Alternativo</label>
+                <label for="email_alternativo">Correo Electrónico Alternativo</label>
                 <input
                     type="email"
                     :class="
@@ -213,7 +213,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="form-group">
-                <label for="rol">Estado civil</label>
+                <label for="rol">Estado Civil</label>
                 <v-select
                     v-model="dataInformacionPersonal.estadoCivilNombre"
                     :value="dataInformacionPersonal.estado_civil"
@@ -229,7 +229,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="form-group">
-                <label for="rol">Tipos de sangre</label>
+                <label for="rol">Grupo Sanguíneo</label>
                 <v-select
                     v-model="dataInformacionPersonal.tipoSangreNombre"
                     :value="dataInformacionPersonal.tipo_sangre"

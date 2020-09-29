@@ -331,7 +331,7 @@
     <!-- Fin Seccion donde muestra la imgane cuando no se haya aun seleccionado un paciente -->
     
     <!-- Seccion donde muestra la lista de los pacientes que tienen una cita -->
-    <modal :width="'80%'" height="auto" :scrollable="true" name="listaConsultaExterna">
+    <modal :width="'65%'" height="auto" :scrollable="true" name="listaConsultaExterna">
       <lista-cita-consulta-externa
         ref="listaConsultaExterna"
         @handleSeleccionarClick="handleSeleccionarClick"
@@ -496,18 +496,18 @@ export default {
         this.idCitaModal = this.idCita;
       } else {
         if (value.ESTADOCITA_TIPO == "E") {
-          this.$swal({
+          /* this.$swal({
             icon: "warning",
             title: "Información",
             text:
               "La funcionalidad de visualización emergencia se encuentra en desarrollo.",
-          });
+          }); */
         } else {
-          this.$swal({
+          /* this.$swal({
             icon: "warning",
             title: "Información",
             text: "La funcionalidad se encuentra en desarrollo.",
-          });
+          }); */
         }
       }
     },

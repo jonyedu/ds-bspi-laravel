@@ -59,7 +59,7 @@ export default {
           type: "String",
         },
         {
-          label: "Clave",
+          label: "Código",
           field: "PRODUCTO_CLAVE",
           type: "String",
         },

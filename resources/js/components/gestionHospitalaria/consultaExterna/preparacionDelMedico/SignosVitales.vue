@@ -190,7 +190,7 @@
                             <div class="form-group">
                                 <label
                                     ><span class="text-danger">(*)</span>
-                                    Presion Arterial (MinGr)</label
+                                    Presión Arterial (MinGr)</label
                                 >
                                 <input
                                     :readonly="
@@ -218,7 +218,7 @@
                             <div class="form-group">
                                 <label
                                     ><span class="text-danger">(*)</span>
-                                    Respiracion (30xMin)</label
+                                    Respiración (30xMin)</label
                                 >
                                 <input
                                     :readonly="

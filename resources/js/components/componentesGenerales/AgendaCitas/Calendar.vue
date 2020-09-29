@@ -30,7 +30,7 @@
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="row">
-              <div class="p-3 mb-2 table-secondary text-dark">Cita Futura</div>
+              <div class="p-3 mb-2 table-warning text-dark">Cita Futura</div>
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default {
             return "table-success";
           }
           if (hora_inicial > now && hora_final > now) {
-            return "table-secondary";
+            return "table-warning";
           }
 
           if (hora_inicial < now && hora_final < now) {

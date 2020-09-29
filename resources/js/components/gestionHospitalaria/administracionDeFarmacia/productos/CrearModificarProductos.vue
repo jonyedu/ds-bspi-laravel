@@ -52,12 +52,12 @@
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="form-group">
-                  <label for="direccion">Clave</label>
+                  <label for="direccion">Código</label>
                   <input
                     type="text"
                     id="telefono"
                     class="form-control"
-                    placeholder="Ingrese clave"
+                    placeholder="Ingrese código"
                     v-model="form.frm_clave"
                   />
                 </div>

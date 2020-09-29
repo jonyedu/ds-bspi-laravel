@@ -2,7 +2,7 @@
   <div class="row m-3">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <center>
-        <h5 class="mt-4">USUARIO PARENTESCO</h5>
+        <h5 class="mt-4">Usuario Parentesco</h5>
       </center>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12">

@@ -441,7 +441,7 @@ export default {
 
                     for (let i = 0; i < response.data.datos.length; i++) {
                         let objeto = {
-                            display: response.data.datos[i].nombre,
+                            display: that.$funcionesGlobales.toCapitalFirstAllWords(response.data.datos[i].nombre),
                             value: response.data.datos[i].codigo
                         };
                         especialidades.push(objeto);

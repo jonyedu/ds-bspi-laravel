@@ -21,7 +21,7 @@
                   type="button"
                   class="btn btn-secondary"
                   @click="mostrarComponenteListaUsuarios()"
-                > <i class="fas fa-address-book"></i> Ver Pacientesfrer</button>
+                > <i class="fas fa-address-book"></i> Ver Pacientes</button>
                 
                 <button
                   type="button"
@@ -118,7 +118,7 @@ export default {
     this.titulo_seleccionado = "Listas de Admisiones";
     this.componente_seleccionado="ListaAdmisiones";
     this.titulo_mensaje= "Información del formulario de lista de admisiones";
-    this.linea_uno="El formulario muestra las admisiones registradas en el sistema, se poseen los siguientes filtros:"
+    this.linea_uno="El formulario muestra las admisiones registradas en el sistema, que poseen los siguientes filtros:"
     this.linea_dos="1) Admisiones del día en curso (Admisiones Actuales)."
     this.linea_tres="2) Admisiones históricas en un rango de fechas (Admisiones Históricas)."
     let nombreModulo = this.$nombresModulo.datos_generales;
@@ -175,7 +175,7 @@ export default {
     },
     mostrarComponenteListaUsuarios(){
       this.titulo_mensaje= "Lista de pacientes";
-      this.linea_uno="El formulario muestra los pacientes"
+      this.linea_uno="1) El formulario muestra los pacientes."
       this.titulo_seleccionado = "Lista Pacientes";
       this.componente_seleccionado = "ListaUsuarios";
       this.usuarioData=null;
@@ -184,7 +184,7 @@ export default {
     },
      mostrarComponenteListaAdmisiones() {
       this.titulo_mensaje= "Información del formulario de lista de admisiones";
-      this.linea_uno="El formulario muestra las admisiones registradas en el sistema, se poseen los siguientes filtros:"
+      this.linea_uno="El formulario muestra las admisiones registradas en el sistema, que poseen los siguientes filtros:"
       this.linea_dos="1) Admisiones del día en curso (Admisiones Actuales)."
       this.linea_tres="2) Admisiones históricas en un rango de fechas (Admisiones Históricas)."
       this.titulo_seleccionado = "Lista Admisiones";
@@ -194,8 +194,8 @@ export default {
     },
     mostrarComponenteCrearAdmision() {
       this.titulo_mensaje= "Información del formulario de ingreso de paciente";
-      this.linea_uno="El formulario permite la creación de un nuevo paciente en el sistema."
-      this.linea_dos="Es necesario que el paciente sea registrado para posteriormente proceder a hacer un ingreso de admisión."
+      this.linea_uno="1) El formulario permite la creación de un nuevo paciente en el sistema."
+      this.linea_dos="2) Es necesario que el paciente sea registrado para posteriormente proceder a hacer un ingreso de admisión."
       this.linea_tres=""
       this.titulo_seleccionado = "Nuevo Paciente";
       this.componente_seleccionado = "CrearAdmision";
@@ -203,9 +203,9 @@ export default {
     },
     mostrarComponenteAsignacionSeguro() {
       this.titulo_mensaje= "Información del formulario de creación de admisión";
-      this.linea_uno="El formulario permite la creación de un nuevo registro de admisión."
-      this.linea_dos="Es necesario que se seleccione el paciente al cual se le hara el ingreso, el seguro que cubrira al paciente y por ultimo al beneficiario."
-      this.linea_tres="El formulario tambien permite el ingreso de familiares del paciente(Ingresar Familiar) y su asociación con el usuario(Asociar Familiar Con Paciente)"
+      this.linea_uno="1) El formulario permite la creación de un nuevo registro de admisión."
+      this.linea_dos="2) Es necesario que se seleccione el paciente al cual se le hara el ingreso, el seguro que cubrira al paciente y por ultimo al beneficiario."
+      this.linea_tres="3) El formulario tambien permite el ingreso de familiares del paciente(Ingresar Familiar) y su asociación con el usuario(Asociar Familiar Con Paciente)."
       this.titulo_seleccionado = "Creación De Admisión";
       this.componente_seleccionado = "CrearAdmisionFinal";
       this.usuarioData=null;
