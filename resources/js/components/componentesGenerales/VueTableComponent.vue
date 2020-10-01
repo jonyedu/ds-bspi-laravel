@@ -12,6 +12,9 @@
                 }"
                 :pagination-options="{
                     enabled: true,
+                    mode: 'pages', //pages
+                    dropdownAllowAll: true,
+                    perPageDropdown: [5, 10, 15, 20],
                     nextLabel: 'siguiente',
                     prevLabel: 'anterior',
                     rowsPerPageLabel: 'Filas por página',
@@ -220,7 +223,7 @@
                     </span>
                 </template>
                 <div slot="emptystate" align="center">
-                    No hay datos para monstrar en la tabla
+                    No hay datos para mostrar en la tabla.
                 </div>
             </vue-good-table>
         </div>

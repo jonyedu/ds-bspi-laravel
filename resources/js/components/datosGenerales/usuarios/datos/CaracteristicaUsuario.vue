@@ -5,7 +5,7 @@
                 <div class="form-group">
                     <label for="estatura_metros">Estatura Metros</label>
                     <input
-                        type="text"
+                        type="number"
                         :class="
                             errorInformacionCaracteristicaUsuario.estatura_metros ===
                             ''
@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <label for="peso_kg">Peso Kg</label>
                     <input
-                        type="text"
+                        type="number"
                         :class="
                             errorInformacionCaracteristicaUsuario.peso_kg === ''
                                 ? 'form-control'
@@ -338,7 +338,7 @@
                         type="number"
                         class="form-control"
                         id="msp"
-                        placeholder="msp"
+                        placeholder="MSP"
                         v-model="dataInformacionCaracteristicaUsuario.msp"
                     />
                     <small

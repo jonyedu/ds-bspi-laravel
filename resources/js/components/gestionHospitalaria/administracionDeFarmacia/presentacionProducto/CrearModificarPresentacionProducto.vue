@@ -16,6 +16,11 @@
                   <label for="cargo"><label class="text-danger">(*)</label> Producto</label>
                   <v-select
                     v-model="selectedProducto"
+                    :class="
+                                            errores.producto === ''
+                                                ? ''
+                                                : 'form-control is-invalid'
+                                        "
                     :options="productos"
                     label="PRODUCTO_NOM"
                     @input="setSelectedProducto"
@@ -37,6 +42,11 @@
                 <div class="form-group">
                   <label for="cargo"><label class="text-danger">(*)</label> Presentación</label>
                   <v-select
+                    :class="
+                                            errores.presentacion === ''
+                                                ? ''
+                                                : 'form-control is-invalid'
+                                        "
                     v-model="selectedPresentacion"
                     :options="presentaciones"
                     label="PRESENTACIONFULLPRECIO"
@@ -109,7 +119,6 @@ export default {
       },
       form: {
         producto_cod: "",
-
         presentacion_cod: "",
         presentacionproducto_precio: "",
       },
@@ -182,9 +191,17 @@ export default {
         .catch((error) => {
           //Errores de validación
           if (error.response.status === 422) {
-            if (error.response.data.errors.presentacion_nombre != null) {
-              that.errores.err_nombre =
-                error.response.data.errors.presentacion_nombre;
+            if (error.response.data.errors.producto_cod != null) {
+              that.errores.producto =
+                error.response.data.errors.producto_cod;
+            }
+            if (error.response.data.errors.presentacion_cod != null) {
+              that.errores.presentacion =
+                error.response.data.errors.presentacion_cod;
+            }
+            if (error.response.data.errors.presentacionproducto_precio != null) {
+              that.errores.precio =
+                error.response.data.errors.presentacionproducto_precio;
             }
             loader.hide();
           }

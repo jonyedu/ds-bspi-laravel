@@ -112,7 +112,7 @@
                         <!-- 3.) Torax -->
                         <div class="col-sm-2">
                             <div>
-                                <label>3. Torax</label>
+                                <label>3. Tórax</label>
                             </div>
                             <div
                                 class="custom-control custom-radio custom-control-inline"
@@ -350,14 +350,14 @@
                             <div class="form-group">
                                 <label
                                     ><span class="text-danger">(*)</span> 3.
-                                    Descripción de Torax</label
+                                    Descripción de Tórax</label
                                 >
                                 <textarea
                                     :disabled="$props.readOnly"
                                     :readonly="tipoPersonal != 1"
                                     type="te"
                                     class="form-control"
-                                    placeholder="Descripción de Torax...."
+                                    placeholder="Descripción de Tórax...."
                                     rows="4"
                                     v-model="
                                         form.EXAMENFISICO_TORAX_CP_DESCRIPCION
