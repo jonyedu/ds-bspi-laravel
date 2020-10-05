@@ -339,8 +339,8 @@
     </modal>
     <!-- Fin Seccion donde muestra la lista de los pacientes que tienen una cita -->
 
-    <!-- Esto que es?  -->
-    <!-- Seccion donde muestra la tabla de Estado Cita -->
+    
+    <!-- Esto muestra cuando se le da click en historial clinico para ver la informacion historia del paciente -->
     <modal :width="'65%'" height="auto" :scrollable="true" name="infoCitas">
       <div class="col-lg-12 col-md-12 col-sm-12" v-if="mostarTable == 1">
         <div class="card">
@@ -363,7 +363,7 @@
     </modal>
     <!-- Fin Seccion donde muestra la tabla de Estado Cita -->
 
-    <!-- Esto que es?  -->
+    <!-- Esto muestra la consulta historica del paciente  -->
     <modal :width="'70%'" height="auto" :scrollable="true" name="datosConsultaExterna">
       <visualizacion-preparacion :id-cita-modal-prop="idCitaModal"></visualizacion-preparacion>
     </modal>

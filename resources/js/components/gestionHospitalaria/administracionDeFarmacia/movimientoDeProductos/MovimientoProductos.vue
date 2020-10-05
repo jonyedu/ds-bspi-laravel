@@ -147,7 +147,7 @@
               <!-- Productos -->
               <div class="col-sm-3">
                 <div class="form-group">
-                  <label for="tipo"><label class="text-danger">(*)</label> Productos</label>
+                  <label for="tipo"><label class="text-danger">(*)</label> Producto</label>
                   <v-select
                     v-model="selectedProductos"
                     :value="form.frm_productos_cod"
@@ -294,7 +294,13 @@ export default {
           label: "Stock Actual",
           field: "col_stockActual",
           type: "String",
-        },
+        }/* ,
+        {
+          label: 'Count',
+          field: 'count',
+          headerField: this.sumCount(),
+          type: 'number',
+        } */
       ],
       productosData: [],
 
@@ -348,8 +354,9 @@ export default {
     );
   },
   methods: {
+    
     //Metodo para actualizar la cantidad cada vez que se cambie en la tabla
-    actualizarCantidad: function (value) {
+    /* actualizarCantidad: function (value) {
       for (let i = 0; i < this.productosData.length; i++) {
         if (
           this.productosData[i].col_productos_cod == value.col_productos_cod
@@ -357,7 +364,7 @@ export default {
           this.productosData[i].col_cantidad = value.col_cantidad;
         }
       }
-    },
+    }, */
     //Metodo para obtener la fecha actual y añadir al input de fecha
     obtenerFechaActual: function () {
       var date = new Date();

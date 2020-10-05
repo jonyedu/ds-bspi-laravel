@@ -32,7 +32,7 @@
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 mt-2">
             <div class="col-lg-12 col-md-12 col-sm-12">
-              <label><b>Paciente:</b>{{paciente.nombre_paciente}} </label>
+              <label><b>Paciente: </b>{{paciente.nombre_paciente}} </label>
             </div>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 mt-2">

@@ -21,7 +21,7 @@
                     :disabled="objetoMod != null"
                     @change="changeTimeInicio"
                     v-model="form.hora_inicio"
-                    placeholder="Hora inicio"
+                    placeholder="Hora Inicio"
                 ></v-time>
                 <span>Hasta</span>
                 <v-time
@@ -173,8 +173,13 @@ export default {
 
                     for (let i = 0; i < response.data.length; i++) {
                         let objeto = {
-                            display: that.$funcionesGlobales.toCapitalFirstAllWords(response.data[i].user.US_NOM +" " + response.data[i].user.US_APELL),
-                            value: response.data[i].TRABAJADORESPERSONALSALUD_COD
+                            display: that.$funcionesGlobales.toCapitalFirstAllWords(
+                                response.data[i].user.US_NOM +
+                                    " " +
+                                    response.data[i].user.US_APELL
+                            ),
+                            value:
+                                response.data[i].TRABAJADORESPERSONALSALUD_COD
                         };
                         doctores.push(objeto);
                     }
@@ -222,7 +227,8 @@ export default {
             ) {
                 this.$swal({
                     icon: "info",
-                    title:"Existen validaciones del formulario que debe completar.",
+                    title:
+                        "Existen validaciones del formulario que debe completar.",
                     text: "Seleccione una fecha de cita."
                 });
                 this.existenErroresForm = true;
@@ -236,11 +242,12 @@ export default {
             dd = this.addZero(dd);
             mm = this.addZero(mm);
             var fechaActual = yyyy + "-" + mm + "-" + dd;
-            
+
             if (this.form.fecha_cita < fechaActual) {
                 this.$swal({
                     icon: "info",
-                    title:"Existen validaciones del formulario que debe completar.",
+                    title:
+                        "Existen validaciones del formulario que debe completar.",
                     text: "La fecha de la cita no es correcta."
                 });
                 this.existenErroresForm = true;
@@ -253,7 +260,8 @@ export default {
             ) {
                 this.$swal({
                     icon: "info",
-                    title:"Existen validaciones del formulario que debe completar.",
+                    title:
+                        "Existen validaciones del formulario que debe completar.",
                     text: "Seleccione una hora de inicio."
                 });
                 this.existenErroresForm = true;
@@ -266,14 +274,15 @@ export default {
             ) {
                 this.$swal({
                     icon: "info",
-                    title:"Existen validaciones del formulario que debe completar.",
+                    title:
+                        "Existen validaciones del formulario que debe completar.",
                     text: "Seleccione una hora de cierre."
                 });
                 this.existenErroresForm = true;
                 return;
             }
             //Validar que la hora sea de la cita, sea mayor a la hora actual
-            if (this.form.fecha_cita >= fechaActual) {
+            if (this.form.fecha_cita <=  fechaActual) {
                 var h = hoy.getHours();
                 var m = hoy.getMinutes();
                 var hora_actual = h + ":" + m;
@@ -329,12 +338,14 @@ export default {
                 this.hora_cierre_data.m !== ""
             ) {
                 if (hora_inicio > parseInt(this.hora_cierre_data.H)) {
-                    mensaje ="La hora de inicio es mayor que la hora de cierre.";
+                    mensaje =
+                        "La hora de inicio es mayor que la hora de cierre.";
                     return mensaje;
                 }
                 if (hora_inicio == parseInt(this.hora_cierre_data.H)) {
                     if (minuto_inicio > parseInt(this.hora_cierre_data.m)) {
-                        mensaje ="Las horas son las mismas, sin embargo el minuto de inicio es mayor que el de cierre.";
+                        mensaje =
+                            "Las horas son las mismas, sin embargo el minuto de inicio es mayor que el de cierre.";
                         return mensaje;
                     }
                 }
@@ -357,12 +368,14 @@ export default {
                 this.hora_inicio_data.m !== ""
             ) {
                 if (hora_cierre < parseInt(this.hora_inicio_data.H)) {
-                    mensaje ="La hora de cierre es menor que la hora de inicio.";
+                    mensaje =
+                        "La hora de cierre es menor que la hora de inicio.";
                     return mensaje;
                 }
                 if (hora_cierre == parseInt(this.hora_inicio_data.H)) {
                     if (minuto_cierre < parseInt(this.hora_inicio_data.m)) {
-                        mensaje ="Las horas son las mismas, sin embargo el minuto de cierre es menor que el de inicio.";
+                        mensaje =
+                            "Las horas son las mismas, sin embargo el minuto de cierre es menor que el de inicio.";
                         return mensaje;
                     }
                 }
@@ -425,40 +438,40 @@ export default {
                 return;
             }
             let that = this;
-      let url = "";
-      let mensaje = "";
-      url = "/gestion_hospitalaria/administracion_cita/crear_cita";
-      mensaje = "Datos actualizados correctamente.";
-      var loader = that.$loading.show();
-      axios
-        .post(url, this.form)
-        .then(function(response) {
-          //Llamar metodo de parent para que actualice el grid.
-          loader.hide();
-          that.$emit("recargarDatosConsultaExterna");
-          that.$swal({
-            icon: "success",
-            title: "Proceso realizado exitosamente.",
-            text: "Datos actualizados correctamente."
-          });
-        })
-        .catch(error => {
-          //Errores de validación
-          if (error.response.status === 421) {
-            that.$swal({
-              icon: "error",
-              title: "Existen errores",
-              text: error.response.data.mensaje
-            });
-          }else{
-            that.$swal({
-              icon: "error",
-              title: "Existen errores.",
-              text: error
-            });
-          }
-          loader.hide();         
-        });
+            let url = "";
+            let mensaje = "";
+            url = "/gestion_hospitalaria/administracion_cita/crear_cita";
+            mensaje = "Datos actualizados correctamente.";
+            var loader = that.$loading.show();
+            axios
+                .post(url, this.form)
+                .then(function(response) {
+                    //Llamar metodo de parent para que actualice el grid.
+                    loader.hide();
+                    that.$emit("recargarDatosConsultaExterna");
+                    that.$swal({
+                        icon: "success",
+                        title: "Proceso realizado exitosamente.",
+                        text: "Datos actualizados correctamente."
+                    });
+                })
+                .catch(error => {
+                    //Errores de validación
+                    if (error.response.status === 421) {
+                        that.$swal({
+                            icon: "error",
+                            title: "Existen errores",
+                            text: error.response.data.mensaje
+                        });
+                    } else {
+                        that.$swal({
+                            icon: "error",
+                            title: "Existen errores.",
+                            text: error
+                        });
+                    }
+                    loader.hide();
+                });
         }
     }
 };
