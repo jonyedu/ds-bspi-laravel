@@ -12,7 +12,7 @@
                 }"
                 :pagination-options="{
                     enabled: true,
-                    //mode: 'remote', //pages
+                    mode: 'pages', //pages
                     dropdownAllowAll: true,
                     perPageDropdown: [5, 10, 15, 20],
                     nextLabel: 'siguiente',
@@ -214,14 +214,14 @@
                         </div>
                     </span>
                 </template>
-                <template slot="pagination-bottom" slot-scope="props">
+                <!-- <template slot="pagination-bottom" slot-scope="props">
                     <custom-pagination
                         :total="props.total"
                         :pageChanged="props.pageChanged"
                         :perPageChanged="props.perPageChanged"
                     >
                     </custom-pagination>
-                </template>
+                </template> -->
                 <div slot="emptystate" align="center">
                     No hay datos para mostrar en la tabla.
                 </div>

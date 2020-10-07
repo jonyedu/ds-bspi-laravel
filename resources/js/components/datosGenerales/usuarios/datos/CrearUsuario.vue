@@ -757,7 +757,22 @@ export default {
                 this.validCedula = false;
             }
         },
+        //Funcion para añadir el 0 al mes y día de la fecha
+        addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        },
         guardar() {
+            //Validar que la fechacita no sea de menor a la fecha actual
+            var hoy = new Date();
+            var dd = hoy.getDate();
+            var mm = hoy.getMonth() + 1;
+            var yyyy = hoy.getFullYear();
+            dd = this.addZero(dd);
+            mm = this.addZero(mm);
+            var fechaActual = yyyy + "-" + mm + "-" + dd;
             if (
                 this.validCedula == false &&
                 this.dataInformacionSistema.tipoIdentificacion == "CEDULA"
@@ -768,6 +783,15 @@ export default {
                     text:
                         "Cedula ingresada es invalida, por favor vuelva a revisar!"
                 });
+            } 
+            if(this.dataInformacionNacimiento.fecha_nacimiento > fechaActual){
+                this.$swal({
+                    icon: "info",
+                    title:"Existen validaciones del formulario que debe completar.",
+                    text: "La fecha de nacimiento no es correcta."
+                });
+                this.existenErroresForm = true;
+                return;
             } else {
                 let that = this;
                 that.form = new FormData();
