@@ -58,7 +58,7 @@
                                         "
                                         id="observacion"
                                         class="form-control"
-                                        placeholder="Ingrese abreviatura"
+                                        placeholder="Ingrese su observación"
                                         v-model="form.frm_abreviatura"
                                     />
                                     <small

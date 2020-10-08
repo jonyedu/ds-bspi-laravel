@@ -180,12 +180,20 @@
                     </span>
                     <!-- Para mostrar color en los estados de Signos Vitales -->
                     <span v-else-if="props.column.field == 'signo_vital'">
-                        <div v-if="props.row.signo_vital == 'Registrado'">
+                        <div
+                            v-if="
+                                props.row.signo_vital == 'Registrado'
+                            "
+                        >
                             <span style="font-weight: bold; color: #0C9C05;">{{
                                 props.row.signo_vital
                             }}</span>
                         </div>
-                        <div v-else-if="props.row.signo_vital == 'Pendiente'">
+                        <div
+                            v-else-if="
+                                props.row.signo_vital == 'Pendiente'
+                            "
+                        >
                             <span style="font-weight: bold; color: red;">{{
                                 props.row.signo_vital
                             }}</span>
@@ -214,6 +222,7 @@
                         </div>
                     </span>
                 </template>
+<<<<<<< HEAD
                 <!-- <template slot="pagination-bottom" slot-scope="props">
                     <custom-pagination
                         :total="props.total"
@@ -222,6 +231,8 @@
                     >
                     </custom-pagination>
                 </template> -->
+=======
+>>>>>>> parent of 94f847b... Correciones por la ing. angela yanza, antes de revisar el desarrollo final v4
                 <div slot="emptystate" align="center">
                     No hay datos para mostrar en la tabla.
                 </div>
@@ -430,12 +441,6 @@ export default {
         this.rows = this.$props.rowsData;
     },
     methods: {
-        customPageChange(customCurrentPage) {
-            this.pageChanged({ currentPage: customCurrentPage });
-        },
-        customPerPageChange(customPerPage) {
-            this.perPageChanged({ currentPerPage: customPerPage });
-        },
         handleSeleccionarClick(value) {
             this.$emit("handleSeleccionarClick", value);
         },

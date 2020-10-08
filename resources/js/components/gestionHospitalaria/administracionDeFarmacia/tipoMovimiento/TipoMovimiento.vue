@@ -158,7 +158,6 @@ export default {
           let tipoMovimiento = [];
           for (let i = 0; i < response.data.tipoMovimiento.length; i++) {
             let objeto = {
-              name: 'prueba',
               TIPOMOVIMIENTO_COD: response.data.tipoMovimiento[i].TIPOMOVIMIENTO_COD,
               TIPOMOVIMIENTO_NOMBRE: that.$funcionesGlobales.toCapitalFirstAllWords(response.data.tipoMovimiento[i].TIPOMOVIMIENTO_NOMBRE),
               TIPOMOVIMIENTO_OBS: that.$funcionesGlobales.toCapitalFirstWords(response.data.tipoMovimiento[i].TIPOMOVIMIENTO_OBS),
