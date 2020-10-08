@@ -172,7 +172,7 @@ export default {
                     type: "String"
                 },
                 {
-                    label: "Fecha Cambio Último Estado",
+                    label: "Fecha Cambio Ultimo Estado",
                     field: "fecha_cambio_ultimo",
                     type: "String"
                 }

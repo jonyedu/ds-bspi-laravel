@@ -44,7 +44,7 @@
                                                 : 'form-control is-invalid'
                                         "
                     id="cicloInicial"
-                    placeholder="Ingrese cant."
+                    placeholder="Ingrese cantidad"
                     v-model="form.frm_cantidad"
                   />
                   <small

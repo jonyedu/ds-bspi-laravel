@@ -319,7 +319,7 @@
                 @endforelse
             </tr>
             <tr>
-                <th style="background-color: #D2F0CA;text-align: left;" class="bordered">PRESIÓN ARTERIAL</th>
+                <th style="background-color: #D2F0CA;text-align: left;" class="bordered">PESION ARTERIAL</th>
                 @forelse($citaArray as $signosVitales)
                 @if ($signosVitales->informacionInicial != null)
                 <td>{{$signosVitales->informacionInicial->INFORMACIONINICIAL_PRESION_ARTERIAL}} </td>
@@ -610,7 +610,7 @@
                 <td style="width: 10%;text-align: center;"> {{$cita->ESTADO_FINAL_CITA->ESTADOCITA_FECHA}} </td>
                 <th style="background-color: #D2F0CA;text-align: center;" class="bordered">HORA FIN</th>
                 <td style="width: 5%;text-align: center;"> {{$cita->ESTADO_FINAL_CITA->ESTADOCITA_HORA_FINAL}} </td>
-                <th style="width: 5%;background-color: #D2F0CA;text-align: center;" class="bordered">MÉDICO</th>
+                <th style="width: 5%;background-color: #D2F0CA;text-align: center;" class="bordered">MEDICO</th>
                 <td style="text-align: center;width: 20%;">{{$cita->ESTADO_FINAL_CITA->doctor->user->FULL_NAME}}</td>
                 <td style="text-align: center;width: 5%;">{{$cita->ESTADO_FINAL_CITA->doctor->user->US_COD}}</td>
                 <th style="width: 5%;background-color: #D2F0CA;text-align: center;" class="bordered">FIRMA</th>
@@ -658,7 +658,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <th style="background-color: #D2F0CA;text-align: center;" class="bordered-top">FIRMAR AL PIE DE CADA NOTA DE EVOLUCIÓN</th>
+                                <th style="background-color: #D2F0CA;text-align: center;" class="bordered-top">FIRMAR AL PIE DE CADA NOTA DE EVOLUCION</th>
                             </tr>
                         </tbody>
                     </table>

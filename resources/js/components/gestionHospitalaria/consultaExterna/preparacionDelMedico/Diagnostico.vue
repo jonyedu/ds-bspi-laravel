@@ -17,8 +17,8 @@
                             role="alert"
                         >
                             <b>Tenga en consideración lo siguiente</b><br>
-                            *Presuntivo es un diagnóstico basado es una suposición.<br>
-                            *Definitivo es un diagnóstico concreto.
+                            *Presuntivo es cuando se busca un patrón que se relacione a las alteraciones encontradas entre las enfermedades conocidas durante sus años de estudio o experiencias.<br>
+                            *Definitivo es cuando se llega después de obtener los resultados de pruebas, como análisis de sangre y biopsias, las cuales se realizan para determinar si hay presencia de cierta enfermedad o afección.
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-8 mt-2">
                             <div class="form-inline">
