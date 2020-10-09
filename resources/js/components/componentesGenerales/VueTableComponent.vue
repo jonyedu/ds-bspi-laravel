@@ -218,18 +218,7 @@
                             {{ props.formattedRow[props.column.field] }}
                         </div>
                     </span>
-                </template>
-<<<<<<< HEAD
-                <!-- <template slot="pagination-bottom" slot-scope="props">
-                    <custom-pagination
-                        :total="props.total"
-                        :pageChanged="props.pageChanged"
-                        :perPageChanged="props.perPageChanged"
-                    >
-                    </custom-pagination>
-                </template> -->
-=======
->>>>>>> parent of 94f847b... Correciones por la ing. angela yanza, antes de revisar el desarrollo final v4
+                </template>    
                 <div slot="emptystate" align="center">
                     No hay datos para monstrar en la tabla
                 </div>
