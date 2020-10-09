@@ -12,16 +12,9 @@
                 }"
                 :pagination-options="{
                     enabled: true,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-                    //mode: 'remote', //pages
-=======
                     mode: 'pages', //pages
->>>>>>> parent of 94f847b... Correciones por la ing. angela yanza, antes de revisar el desarrollo final v4
                     dropdownAllowAll: true,
                     perPageDropdown: [5, 10, 15, 20],
->>>>>>> parent of 905d022... Correciones por la ing. angela yanza, antes de revisar el desarrollo final v5
                     nextLabel: 'siguiente',
                     prevLabel: 'anterior',
                     rowsPerPageLabel: 'Filas por página',
@@ -228,22 +221,7 @@
                             {{ props.formattedRow[props.column.field] }}
                         </div>
                     </span>
-<<<<<<< HEAD
-                </template>    
-=======
-                </template>
-<<<<<<< HEAD
-                <template slot="pagination-bottom" slot-scope="props">
-                    <custom-pagination
-                        :total="props.total"
-                        :pageChanged="props.pageChanged"
-                        :perPageChanged="props.perPageChanged"
-                    >
-                    </custom-pagination>
-                </template>
->>>>>>> parent of 905d022... Correciones por la ing. angela yanza, antes de revisar el desarrollo final v5
-=======
->>>>>>> parent of 94f847b... Correciones por la ing. angela yanza, antes de revisar el desarrollo final v4
+                </template>  
                 <div slot="emptystate" align="center">
                     No hay datos para monstrar en la tabla
                 </div>

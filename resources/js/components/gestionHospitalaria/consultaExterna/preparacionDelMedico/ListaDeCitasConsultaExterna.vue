@@ -51,41 +51,25 @@ export default {
           label: "Fecha",
           field: "fecha_cita",
           type: "String",
-<<<<<<< HEAD
           width: "20%"
-=======
-          width: "15%"
->>>>>>> parent of 94f847b... Correciones por la ing. angela yanza, antes de revisar el desarrollo final v4
         },
         {
           label: "Hora Inicio",
           field: "hora_inicio",
           type: "String",
-<<<<<<< HEAD
           width: "7%"
-=======
-          width: "10%"
->>>>>>> parent of 94f847b... Correciones por la ing. angela yanza, antes de revisar el desarrollo final v4
         },
         {
           label: "Hora Final",
           field: "hora_final",
           type: "String",
-<<<<<<< HEAD
           width: "7%"
-=======
-          width: "10%"
->>>>>>> parent of 94f847b... Correciones por la ing. angela yanza, antes de revisar el desarrollo final v4
         },
         {
           label: "Signos Vitales",
           field: "signo_vital",
           type: "String",
-<<<<<<< HEAD
           width: "7%"
-=======
-          width: "10%"
->>>>>>> parent of 94f847b... Correciones por la ing. angela yanza, antes de revisar el desarrollo final v4
         }
       ]
     };
