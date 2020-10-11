@@ -332,17 +332,15 @@ class UserApiController extends Controller
      y así guardar el valor en la tabla users campo TIEMPO_ACTUALIZACION_CLAVE para saber cuando 
      se caduca la clave de cada usuario que se cree*/
     public function obtenerFechaCaducaClave()
-    {        
+    {
         $noMes = Configuracion::where('TIEMPO_ACTUALIZACION_CLAVE', '>', '0')->first();
-        if($noMes != null){
+        if ($noMes != null) {
             $fechaActual = getFecha();
             $fechaCambioClave = date("Y-m-d", strtotime($fechaActual . "+ " . $noMes->TIEMPO_ACTUALIZACION_CLAVE . " month"));
             return $fechaCambioClave;
-        }
-        else{
+        } else {
             return getFecha();
         }
-        
     }
 
     public function eliminarUsuario($id)
@@ -552,22 +550,28 @@ class UserApiController extends Controller
         ]);
         DB::beginTransaction();
         try {
+            $userController = new UserApiController();
             if ($request->input('password') != null && $request->input('password') != '') {
-                $contrasenaActual =  User::where('US_COD', $request->input('usCod'))
+                $contrasenaActual =  User::where('USER_LOGIC_ESTADO', 'A')
                     ->where('id', $request->input('id'))
                     ->first();
 
                 if (Hash::check($request->input('password'), $contrasenaActual->US_CLAVE)) {
                     return response()->json(['msg' => 'No puede usar la misma clave para la actualización.'], 421);
                 } else {
-                    User::where('US_COD', $request->input('usCod'))
+                    $respuesta =  User::where('USER_LOGIC_ESTADO', 'A')
                         ->where('id', $request->input('id'))->update([
                             'password' =>  Hash::make($request->input('password')),
                             'US_CLAVE' =>  Hash::make($request->input('password')),
-                            'US_FECHA_CAMBIO_CLAVE' => $this->obtenerFechaCaducaClave(),
+                            'US_FECHA_CAMBIO_CLAVE' => $userController->obtenerFechaCaducaClave(),
                         ]);
                     DB::commit();
-                    return response()->json(['msg' => 'OK'], 200);
+                    if ($respuesta) {
+                        return response()->json(['msg' => 'OK'], 200);
+                        //return route('logout');
+                    }
+
+                    
                 }
             }
         } catch (Exception $e) {

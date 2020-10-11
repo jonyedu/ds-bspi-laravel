@@ -33,7 +33,7 @@ export const funcionesGlobales = {
         var fecha = new Date(fechaCambioClave);
         //Obtenemos el # Mes de fechaCambioClave
         var mesCambioClave = fecha.getMonth() + 1;
-        
+
         //Obtenemos la diferencia entre meses
         var noMes = parseInt(m) - parseInt(mesCambioClave);
         if (noMes >= tiempoActualizacionClave) {

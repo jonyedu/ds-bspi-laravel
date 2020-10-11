@@ -211,7 +211,7 @@ export default {
                         that.$swal({
                             icon: "error",
                             title: "Existe un error",
-                            text: "error.response.data.msg"
+                            text: error.response.data.msg
                         });
                         loader.hide();
                     } else if (error.response.status === 422) {
