@@ -20,9 +20,14 @@ class PresentacionProducto extends Model
     protected $table = 'presentacion_producto';
     protected $primaryKey = 'PRESENTACIONPRODUCTO_COD';
 
-     public function presentaciones()
+    public function presentaciones()
     {
         return $this->belongsTo('App\GestionHospitalaria\AdministracionDeFarmacia\Presentacion', 'PRESENTACION_COD', 'PRESENTACION_COD');
+    }
+
+    public function presentacion()
+    {
+        return $this->hasOne('App\GestionHospitalaria\AdministracionDeFarmacia\Presentacion', 'PRESENTACION_COD', 'PRESENTACION_COD');
     }
 
     public function productos()

@@ -15,6 +15,7 @@ class ProductosApiController extends Controller
     {
         try {
             $productos = Productos::with('categoria')
+                ->orderBy('PRODUCTO_NOM', 'asc')
                 ->where('PRODUCTO_LOGIC_ESTADO', 'A')
                 ->where('CATEGORIA_COD', $id)
                 ->get();

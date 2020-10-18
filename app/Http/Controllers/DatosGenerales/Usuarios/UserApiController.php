@@ -21,9 +21,7 @@ class UserApiController extends Controller
 {
     public function cargarUsuarios()
     {
-
         try {
-
             $usuarios = User::where('USER_LOGIC_ESTADO', 'A')->with('identificaciones')
                 ->orderBy('id', 'desc')->get();
             return  response()->json(['usuarios' => $usuarios], 200);
@@ -33,10 +31,10 @@ class UserApiController extends Controller
     }
     public function cargarUsuariosCampos()
     {
-
         try {
-
-            $usuarios = User::select('US_COD', 'US_NOM', 'US_APELL', 'id')->where('US_ACTIVO', 'S')->where('USER_LOGIC_ESTADO', 'A')->orderBy('US_NOM', 'asc')->get();
+            $usuarios = User::where('US_ACTIVO', 'S')
+                ->where('USER_LOGIC_ESTADO', 'A')
+                ->orderBy('US_NOM', 'asc')->get();
             return  response()->json(['usuarios' => $usuarios], 200);
         } catch (Exception $e) {
             return response()->json(['mensaje' => $e->getMessage()], 500);

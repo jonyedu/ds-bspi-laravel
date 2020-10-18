@@ -38,12 +38,21 @@ class UnidadApiController extends Controller
     }
     public function guardarModificarUnidad(Request $request)
     {
-        $request->validate([
-            'frm_nombre' =>  "required|string",
-            'frm_tipo_unidad_codigo' =>  "required|numeric",
-            'frm_simbologia' =>  "required|string",
-
-        ]);
+        if ($request->input('frm_unidad_codigo') == "") {     
+            $request->validate([
+                'frm_nombre' =>  "required|string",
+                'frm_tipo_unidad_codigo' =>  "required|numeric",
+                'frm_simbologia' =>  "required|string|unique:unidad,UNIDAD_SIMB"
+    
+            ]);
+        }else{
+            $request->validate([
+                'frm_nombre' =>  "required|string",
+                'frm_tipo_unidad_codigo' =>  "required|numeric",
+                'frm_simbologia' =>  "required|string"
+    
+            ]);
+        }        
         try {
             $user = Auth::user();
             Unidad::updateOrCreate(

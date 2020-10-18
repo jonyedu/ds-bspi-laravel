@@ -41,8 +41,8 @@ class PresentacionApiController extends Controller
         
         $request->validate([
             'presentacion_nombre' =>  "required|string|max:250",
-            'frm_cantidad' =>  "required|string|max:250",
-            'frm_unidad_codigo'=> "required|numeric|max:20"
+            'frm_cantidad' =>  "required|string",
+            'frm_unidad_codigo'=> "required|numeric"
             ]);
         
         $presentacion_nombre=$request->input('presentacion_nombre');

@@ -181,6 +181,14 @@ export default {
         })
         .catch((error) => {
           //Errores de validación
+          if (error.response.status === 421) {
+            loader.hide();
+            that.$swal({
+                icon: "error",
+                title: "Existe un Error.",
+                text: error.response.data.mensaje
+            });
+          }        
           if (error.response.status === 422) {
             if (error.response.data.errors.presentacion_nombre != null) {
               that.errores.err_nombre =
@@ -189,11 +197,6 @@ export default {
             loader.hide();
           }
           loader.hide();
-          that.$swal({
-            icon: "error",
-            title: "Existen errores",
-            text: error.response.mensaje,
-          });
         });
     },
   },

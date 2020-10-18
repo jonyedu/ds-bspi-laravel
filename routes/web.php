@@ -331,6 +331,7 @@ Route::group(['prefix' => 'gestion_hospitalaria', 'middleware' => ['auth:web']],
 
     /*PresentacionProducto*/
     Route::get('administracion_farmacia/cargar_presentacion_producto', 'GestionHospitalaria\AdministracionDeFarmacia\PresentacionProductoApiController@cargarPresentacionProductoTabla');
+    Route::get('administracion_farmacia/cargar_presentacion_producto_por_id/{id}', 'GestionHospitalaria\AdministracionDeFarmacia\PresentacionProductoApiController@cargarPresentacionProductoPorId');
     Route::post('administracion_farmacia/guardar_presentacion_producto', 'GestionHospitalaria\AdministracionDeFarmacia\PresentacionProductoApiController@guardarPresentacionProducto');
     Route::delete('administracion_farmacia/eliminar_presentacion_producto/{id}', 'GestionHospitalaria\AdministracionDeFarmacia\PresentacionProductoApiController@eliminarPresentacionProducto');
    

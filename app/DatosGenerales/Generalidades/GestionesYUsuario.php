@@ -25,22 +25,6 @@ class GestionesYUsuario extends Model
     protected $appends = [
         'GESTION_NOM', 'ROL_NOM', 'USUARIO_NOM', 'US_CED'
     ];
-    public function getGESTIONNOMAttribute()
-    {
-        return  $this->gestion->GESTION_NOM;
-    }
-    public function getROLNOMAttribute()
-    {
-        return  $this->rol->USROL_NOM;
-    }
-    public function getUSUARIONOMAttribute()
-    {
-        return $this->usuario->US_APELL . ' ,' . $this->usuario->US_NOM;
-    }
-    public function getUSCEDAttribute()
-    {
-        return $this->identificacion->USID_CODIGO;
-    }
     public function gestion()
     {
         return $this->hasOne('App\DatosGenerales\Gestiones\Gestiones', 'GESTION_COD', 'GESTION_COD');
@@ -56,5 +40,25 @@ class GestionesYUsuario extends Model
     public function identificacion()
     {
         return $this->hasOne('App\DatosGenerales\Generalidades\IdentificacionesYUsuario', 'US_COD', 'US_COD')->where('identificaciones_y_usuarios.ID_COD', 'CEDULA')->where('identificaciones_y_usuarios.IDENTIFICACIONESUSUARIO_LOGIC_ESTADO', 'A');
+    }
+    public function getGESTIONNOMAttribute()
+    {
+        return  $this->gestion->GESTION_NOM;
+    }
+    public function getROLNOMAttribute()
+    {
+        return  $this->rol->USROL_NOM;
+    }
+    public function getUSUARIONOMAttribute()
+    {
+        if($this->usuario != null){
+            return $this->usuario->US_APELL . ' ,' . $this->usuario->US_NOM;
+        }
+        //return $this->usuario;
+        /* return $this->usuario->US_APELL . ' ,' . $this->usuario->US_NOM; */
+    }
+    public function getUSCEDAttribute()
+    {
+        return $this->identificacion->USID_CODIGO;
     }
 }

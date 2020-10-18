@@ -15,7 +15,10 @@ class GestionesYUsuarioApiController extends Controller
     {
         //Se hace select a la tabla organizaciones.
         try {
-            $gestionesYUsuarios = GestionesYUsuario::where('GESTIONUSUARIO_LOGIC_ESTADO', 'A')->orderBy('GESTION_COD', 'asc')->get();
+            $gestionesYUsuarios = GestionesYUsuario::with('usuario')
+                ->where('GESTIONUSUARIO_LOGIC_ESTADO', 'A')
+                ->orderBy('GESTION_COD', 'asc')
+                ->get();
             return  response()->json(['gestionesYUsuarios' => $gestionesYUsuarios], 200);
         } catch (Exception $e) {
             return response()->json(['mensaje' => $e->getMessage()], 500);

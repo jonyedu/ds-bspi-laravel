@@ -169,7 +169,7 @@
                   <v-select
                     v-model="selectedPresentacionProducto"
                     :options="presentacionproductos"
-                    label="PRESENTACION_FULL"
+                    label="display"
                     v-bind:class="{
                                             disabled: disabledProducto != false
                                         }"
@@ -375,12 +375,12 @@ export default {
       this.form.frm_fecha_transaccion = fechaActual;
     },
     //Funcion para añadir el 0 al mes y día de la fecha
-      addZero(i) {
-          if (i < 10) {
-              i = "0" + i;
-          }
-          return i;
-      },
+    addZero(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    },
     //Metodos para obtener y agregar datos a los comboBox
     setSelectedTipoMovimiento(value) {
       let that = this;
@@ -575,7 +575,8 @@ export default {
               productos.push(objeto);
             });
             that.productos = productos;
-            that.presentacionproductos = response.data.presentacionproductos;
+            //that.presentacionproductos = response.data.presentacionproductos;
+            that.setSelectedPresentacionProducto();
             //loader.hide();
           })
           .catch((error) => {
@@ -589,7 +590,7 @@ export default {
           });
       }
     },
-    setSelectedPresentacionProducto(value) {
+    /* setSelectedPresentacionProducto(value) {
       if (value !== null) {
         this.form.frm_presentacionproducto_cod = this.selectedPresentacionProducto.PRESENTACIONPRODUCTO_COD;
         if (this.form.frm_tipo_movimiento_abrev != "ING") {
@@ -597,6 +598,47 @@ export default {
         }
       } else {
         this.form.frm_presentacionproducto_cod = "";
+      }
+    }, */
+    setSelectedPresentacionProducto(value) {
+      /* if (this.selectedProductos == null) {
+        this.form.frm_productos_cod = "";
+        this.form.frm_stockActual = "";
+      }*/
+      if (value != null) {
+        this.form.frm_presentacionproducto_cod = value.presentacionproducto_cod;
+        this.form.frm_stockActual = "";
+      } 
+      if (this.form.frm_productos_cod != "") {
+        let that = this;
+        //var loader = that.$loading.show();
+        let url =
+          "/gestion_hospitalaria/administracion_farmacia/cargar_presentacion_producto_por_id/" +
+          this.form.frm_productos_cod;
+
+        axios
+          .get(url)
+          .then(function (response) {
+            let presentacionproductos = [];
+            response.data.presentacionproductos.forEach((presentacionproducto) => {
+              let objeto = {};
+              objeto.display = that.$funcionesGlobales.toCapitalFirstAllWords(presentacionproducto.presentacion.PRESENTACION_NOM);
+              objeto.presentacionproducto_cod = presentacionproducto.PRESENTACIONPRODUCTO_COD;
+              presentacionproductos.push(objeto);
+            });
+            that.presentacionproductos = presentacionproductos;
+            //that.presentacionproductos = response.data.presentacionproductos;
+            //loader.hide();
+          })
+          .catch((error) => {
+            //Errores
+            that.$swal({
+              icon: "error",
+              title: "Existe un error",
+              text: error,
+            });
+            //loader.hide();
+          });
       }
     },
     //Metodo para cargar el Stock Actual del producto seleccionado

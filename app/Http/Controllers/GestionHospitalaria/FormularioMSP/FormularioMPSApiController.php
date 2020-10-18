@@ -79,12 +79,6 @@ class FormularioMPSApiController extends Controller
                      }])
                      ->take(8)
                      ->get();  
-                // $citaArray = Cita::where('CITA_LOGIC_ESTADO', 'A')
-                //     ->where('USER_ID', $idUser)
-                //     ->orderBy('created_at', 'desc')
-                //     ->with('prescripcion.medico')
-                //     ->get();
-                // return $citaArray;
                 
                 //Para concatenar el nombre del archivo
                 if ($cita != null) {

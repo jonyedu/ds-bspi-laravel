@@ -243,35 +243,4 @@ class MovimientoProductosApiController extends Controller
 
         return $stockActualOrigenFinal;
     }
-    //copia
-    /* public function validarStockProducto1(Request $request, $productos)
-    {
-        $stockActualOrigenFinal = -1;
-        $stockActualOrigen = 0;
-
-        //Hago una consulta a la tabla producto_detalle, para saber si hay registro
-        $stockAnteriorOrigen = ProductosDetalle::where('FARMACIA_COD', $request->input('frm_farmacia_cod_origen'))->where('PRODUCTO_COD', $request->input('frm_productos_cod'))->first();
-        //Si no es NULL, entonces hay registro en la tabla producto_detalle, caso contrario devuelve -1 que significa que no hay registro
-        if ($stockAnteriorOrigen != null) {
-            //Si el stock es <= 0, devolver un mensaje diciendo que no hay stock
-            if ($stockAnteriorOrigen->PRODUCTO_DETALLE_STOCK <= 0) {
-                $stockActualOrigenFinal = -1;
-            }
-            //Si hay registro y es mayor a 0, entonces hay stock
-            else {
-                //Obtengo el resulta del stock Actual, despues de haber restado con la cantidad que sale
-                $stockActualOrigen = $stockAnteriorOrigen->PRODUCTO_DETALLE_STOCK - $productos['col_cantidad'];
-                //Si el resultado es menor a 0, entonces no hay stock suficiente para salir
-                if ($stockActualOrigen < 0) {
-                    $stockActualOrigenFinal = -1;
-                }
-                //Hay estoy suficiente, para trasladar o el egreso
-                else {
-                    $stockActualOrigenFinal = $stockActualOrigen;
-                }
-            }
-        }
-
-        return $stockActualOrigenFinal;
-    } */
 }

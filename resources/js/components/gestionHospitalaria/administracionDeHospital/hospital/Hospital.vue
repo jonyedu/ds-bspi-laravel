@@ -16,7 +16,7 @@
               <vuetable-component
                 :anular-button="true"
                 :modificar-button="true"
-                :info-button="true"
+                :info-button="false"
                 :columns-data="columns"
                 :rows-data="hospitales"
                 :logo-hospital="hospitalMod?false: true"

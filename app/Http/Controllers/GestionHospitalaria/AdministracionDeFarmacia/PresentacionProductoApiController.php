@@ -22,35 +22,51 @@ class PresentacionProductoApiController extends Controller
                 ->with('presentaciones', 'productos')
                 ->where('PRESENTACIONPRODUCTO_LOGIC_ESTADO', 'A')
                 ->get();
+            if ($presentacionProductos != null) {
+                $presentacionProductosTabla = collect([]);
+                foreach ($presentacionProductos as $item) {
+                    if ($item->presentaciones != null) {
+                        $object = collect([]);
 
-            $presentacionProductosTabla = collect([]);
-            foreach ($presentacionProductos as $item) {
-                $object = collect([]);
+                        $object->put('PRESENTACIONPRODUCTO_COD', $item->PRESENTACIONPRODUCTO_COD);
+                        $object->put('PRESENTACION_NOM', $item->presentaciones->PRESENTACION_NOM);
+                        $object->put('PRESENTACION_COD', $item->presentaciones->PRESENTACION_COD);
+                        $object->put('PRESENTACION_UNIDAD', $item->presentaciones->PRESENTACION_UNIDAD);
+                        $object->put('PRESENTACIONPRODUCTO_PRECIO', $item->PRESENTACIONPRODUCTO_PRECIO);
+                        $object->put(
+                            'PRESENTACION_FULL',
+                            $item->presentaciones->PRESENTACION_NOM . '-' . $item->presentaciones->PRESENTACION_UNIDAD
+                        );
 
-                $object->put('PRESENTACIONPRODUCTO_COD', $item->PRESENTACIONPRODUCTO_COD);
-                $object->put('PRESENTACION_NOM', $item->presentaciones->PRESENTACION_NOM);
-                $object->put('PRESENTACION_COD', $item->presentaciones->PRESENTACION_COD);
-                $object->put('PRESENTACION_UNIDAD', $item->presentaciones->PRESENTACION_UNIDAD);
-                $object->put('PRESENTACIONPRODUCTO_PRECIO', $item->PRESENTACIONPRODUCTO_PRECIO);
-                $object->put(
-                    'PRESENTACION_FULL',
-                    $item->presentaciones->PRESENTACION_NOM . '-' . $item->presentaciones->PRESENTACION_UNIDAD
-                );
+                        $object->put('PRODUCTO_NOM', $item->productos->PRODUCTO_NOM);
+                        $object->put('PRODUCTO_COD', $item->productos->PRODUCTO_COD);
+                        $object->put('PRODUCTO_CLAVE', $item->productos->PRODUCTO_CLAVE);
 
-                $object->put('PRODUCTO_NOM', $item->productos->PRODUCTO_NOM);
-                $object->put('PRODUCTO_COD', $item->productos->PRODUCTO_COD);
-                $object->put('PRODUCTO_CLAVE', $item->productos->PRODUCTO_CLAVE);
+                        $presentacionProductosTabla->push($object);
+                    }
+                }
+                $presentaciones = PresentacionApiController::cargarPresentacionesCombo();
+                $productos = ProductosApiController::cargarProductos();
+                return  response()->json([
+                    'presentacionProductos' => $presentacionProductosTabla,
+                    'presentaciones' => $presentaciones,
+                    'productos' => $productos
 
-                $presentacionProductosTabla->push($object);
+                ], 200);
             }
-            $presentaciones = PresentacionApiController::cargarPresentacionesCombo();
-            $productos = ProductosApiController::cargarProductos();
-            return  response()->json([
-                'presentacionProductos' => $presentacionProductosTabla,
-                'presentaciones' => $presentaciones,
-                'productos' => $productos
+        } catch (Exception $e) {
+            return response()->json(['mensaje' => $e->getMessage()], 500);
+        }
+    }
 
-            ], 200);
+    public function cargarPresentacionProductoPorId($id)
+    {
+        try {
+            $presentacionproductos = PresentacionProducto::with('presentacion')
+                ->where('PRESENTACIONPRODUCTO_LOGIC_ESTADO', 'A')
+                ->where('PRODUCTO_COD', $id)
+                ->get();
+            return  response()->json(['presentacionproductos' => $presentacionproductos], 200);
         } catch (Exception $e) {
             return response()->json(['mensaje' => $e->getMessage()], 500);
         }
@@ -92,7 +108,6 @@ class PresentacionProductoApiController extends Controller
 
     public function guardarPresentacionProducto(Request $request)
     {
-
         $request->validate([
             'producto_cod' =>  'required|integer',
             'presentacion_cod' => 'required|integer',
@@ -109,7 +124,7 @@ class PresentacionProductoApiController extends Controller
             ->get();
 
         if ($exists->count() > 0) {
-            return response()->json(['mensaje' => 'Ya existe esta esta asociacion!'], 422);
+            return response()->json(['mensaje' => 'Ya existe esta esta asociacion.'], 421);
         }
 
 

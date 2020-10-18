@@ -36,6 +36,7 @@ Vue.use(VModal);
 Vue.use(VueSweetalert2);
 Vue.use(VueRouter);
 Vue.use(Loading);
+
 Vue.component(
     "menuComponente",
 
