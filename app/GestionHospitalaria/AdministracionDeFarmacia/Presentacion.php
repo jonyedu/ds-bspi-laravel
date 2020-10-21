@@ -27,7 +27,7 @@ class Presentacion extends Model
 
     public function getPRESENTACIONFULLPRECIOattribute()
     {
-        return $this->PRESENTACION_NOM.'- Unidad: '.$this->PRESENTACION_UNIDAD;
+        return $this->PRESENTACION_NOM.' '.$this->PRESENTACION_UNIDAD;
     }
 
 }

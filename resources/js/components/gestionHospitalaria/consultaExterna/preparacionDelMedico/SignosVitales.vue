@@ -216,9 +216,7 @@
                         <!--Respiracion (30xMin)  -->
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label
-                                    ><span class="text-danger">(*)</span>
-                                    Respiración (30xMin)</label
+                                <label>Respiración (30xMin)</label
                                 >
                                 <input
                                     :readonly="
@@ -271,7 +269,7 @@
                             </div>
                         </div>
                         <!--Estatura (Cm)  -->
-                        <div class="col-sm-4" v-if="true == false">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label
                                     ><span class="text-danger">(*)</span>
@@ -299,12 +297,10 @@
                             </div>
                         </div>
                         <!--Talla (Cm)  -->
-                        <div class="col-sm-4">
+                        <div class="col-sm-4" v-if="true == false">
                             <!-- numberarea -->
                             <div class="form-group">
-                                <label
-                                    ><span class="text-danger">(*)</span> Talla
-                                    (Cm)</label
+                                <label>Talla(Cm)</label
                                 >
                                 <input
                                     :readonly="
@@ -331,9 +327,7 @@
                         <!--Superficie Corporal (m2)  -->
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label
-                                    ><span class="text-danger">(*)</span>
-                                    Superficie Corporal (m²)</label
+                                <label>Superficie Corporal (m²)</label
                                 >
                                 <input
                                     :readonly="
@@ -401,14 +395,14 @@ export default {
                 tipo_discapacidad: "",
                 discapacidad: "",
                 grado_discapacidad: 0,
-                temperatura: "0",
-                pulso: "0",
-                presion_arterial: "0",
-                respiracion: "0",
-                peso: "0",
-                estatura: "0",
-                talla: "0",
-                superficie_corporal: "0",
+                temperatura: "",
+                pulso: "",
+                presion_arterial: "",
+                respiracion: "",
+                peso: "",
+                estatura: "",
+                talla: "",
+                superficie_corporal: "",
                 fecha: ""
             }
         };
@@ -459,11 +453,11 @@ export default {
         },
         //Metodo para obtener la superficie corporal mediante el peso y talla
         calcularSuperficieCorporal: function() {
-            if (this.form.peso == "0" && this.form.talla == "0") {
+            if (this.form.peso == "0" && this.form.estatura == "0") {
                 this.form.superficie_corporal = "0";
             } else {
                 var resultado = Math.sqrt(
-                    (this.form.peso * this.form.talla) / 3600
+                    (this.form.peso * this.form.estatura) / 3600
                 );
                 var superficie_corporal = resultado.toFixed(2);
                 this.form.superficie_corporal = superficie_corporal;
@@ -501,12 +495,12 @@ export default {
                                 tipo_discapacidad: "",
                                 discapacidad: "",
                                 grado_discapacidad: 0,
-                                temperatura: "0",
-                                pulso: "0",
-                                presion_arterial: "0",
+                                temperatura: "",
+                                pulso: "",
+                                presion_arterial: "",
                                 respiracion: "0",
-                                peso: "0",
-                                estatura: "0",
+                                peso: "",
+                                estatura: "",
                                 talla: "0",
                                 superficie_corporal: "0",
                                 fecha: ""

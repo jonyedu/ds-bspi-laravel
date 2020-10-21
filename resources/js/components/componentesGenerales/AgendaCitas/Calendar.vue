@@ -99,11 +99,12 @@ export default {
     checkCita(hora_inicial, hora_final, fecha_cita) {
       var now = this.moment().format("HH:mm:ss");
       var nowDate = this.moment().format("YYYY-MM-DD");
+      //alert("inf:" + nowDate);
       if (fecha_cita < nowDate) {
         return "table-info";
       } else {
         if (fecha_cita > nowDate) {
-          return "table-secondary";
+          return "table-warning";
         } else {
           if (hora_inicial < now && hora_final > now) {
             return "table-success";

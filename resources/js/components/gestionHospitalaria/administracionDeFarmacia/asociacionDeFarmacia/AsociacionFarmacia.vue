@@ -149,13 +149,13 @@ export default {
           let asociacionFarmacia = [];
           for (let i = 0; i < response.data.asociacionFarmacia.length; i++) {
             let objeto = {
-              HOSP_FARM_COD: response.data.asociacionFarmacia[i].hospital.HOSP_FARM_COD,
+              HOSP_FARM_COD: response.data.asociacionFarmacia[i].HOSP_FARM_COD,
               HOSPITAL_COD: response.data.asociacionFarmacia[i].hospital.HOSPITAL_COD,
               HOSPITAL_NOM: that.$funcionesGlobales.toCapitalFirstAllWords(response.data.asociacionFarmacia[i].hospital.HOSPITAL_NOM),
               FARMACIA_COD: response.data.asociacionFarmacia[i].farmacia.FARMACIA_COD,
               FARMACIA_NOM: that.$funcionesGlobales.toCapitalFirstAllWords(response.data.asociacionFarmacia[i].farmacia.FARMACIA_NOM),
             }
-            asociacionFarmacia.push(objeto);                       
+            asociacionFarmacia.push(objeto);
           }
           that.asociacionFarmacia = asociacionFarmacia;
           loader.hide();

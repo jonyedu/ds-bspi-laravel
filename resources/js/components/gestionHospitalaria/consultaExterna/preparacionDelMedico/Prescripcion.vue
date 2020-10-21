@@ -60,7 +60,7 @@
                                         Productos</label
                                     >
                                     <div class="form-inline">
-                                        <div class="btn-group" role="group">
+                                        <!-- <div class="btn-group" role="group">
                                             <button
                                                 type="button"
                                                 class="btn btn-primary"
@@ -68,7 +68,7 @@
                                             >
                                                 <i class="fa fa-search"></i>
                                             </button>
-                                        </div>
+                                        </div> -->
                                         <v-select
                                             style="width:87%"
                                             v-model="selectedProductos"
@@ -304,7 +304,7 @@ export default {
             var mi = date.getMinutes();
             //Segundo
             var s = date.getSeconds();
-            
+
             //Lo ordenas a gusto.
             var fechaActual = y + "/" + m + "/" + d;
             var horaActual = h + ":" + mi + ":" + s;
@@ -452,7 +452,7 @@ export default {
                         ) {
                             that.dimensionArray();
                             that.form.frm_fecha_transaccion = response.data.prescripcion.PRESCRIPCION_FECHA.replace(/-/g, "/");
-                                
+
                             that.form.frm_hora_transaccion =
                                 response.data.prescripcion.PRESCRIPCION_HORA;
                             that.productosData.push({
@@ -677,11 +677,11 @@ export default {
         //Metodo para obtener el data seleccionado cuando el modal se haya cerrado
         handleSeleccionarClick(value) {
             this.$modal.hide("producto");
-            this.selectedProductos = value;
-            this.form.frm_productos_cod = value.id_producto;
-            this.selectedProductos.display = value.nombre_producto;
-            this.form.frm_categoria = value.nombre_categoria;
-            this.form.frm_productos_pvp = value.pvp_producto;
+            this.selectedProductos = value.PRODUCTO_NOM;
+            this.form.frm_productos_cod = value.PRESENTACIONPRODUCTO_COD;
+            //this.selectedProductos.display = value.PRODUCTO_NOM;
+            this.form.frm_categoria = value.CATEGORIA_NOM;
+            this.form.frm_productos_pvp = value.PRODUCTO_PVP;
             this.cargarStockActual();
         },
         //Metodo para añadir los datos a la tabla

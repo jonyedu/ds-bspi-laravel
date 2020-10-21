@@ -32,7 +32,7 @@
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 mt-2">
             <div class="col-lg-12 col-md-12 col-sm-12">
-              <label><b>Paciente:</b>{{paciente.nombre_paciente}} </label>
+              <label><b>Paciente: </b>{{paciente.nombre_paciente}} </label>
             </div>
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 mt-2">
@@ -43,7 +43,7 @@
       </div>
     </div>
   </div>
- 
+
 </div>
 </template>
 <script>
@@ -106,7 +106,7 @@ export default {
         }
       }
     }
-    
+
     let nombreModulo = this.$nombresModulo.datos_generales;
     let nombreFormulario = this.$nombresFormulario.gestion_hospitalaria
       .administracion_de_hospital.admisiones.derivacion.nombre_formulario;
@@ -169,10 +169,10 @@ export default {
     },
      mostrarComponenteConsultaExterna() {
       this.titulo_seleccionado = "Consulta Externa";
-      this.componente_seleccionado =  "CosultaExterna"; 
+      this.componente_seleccionado =  "CosultaExterna";
     },
-    
-    
+
+
     cargarTiposDeSangre: function() {
       return new Promise(resolve => {
         let that = this;

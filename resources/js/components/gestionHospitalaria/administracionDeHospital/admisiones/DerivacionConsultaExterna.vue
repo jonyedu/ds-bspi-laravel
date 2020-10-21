@@ -21,7 +21,7 @@
                     :disabled="objetoMod != null"
                     @change="changeTimeInicio"
                     v-model="form.hora_inicio"
-                    placeholder="Hora inicio"
+                    placeholder="Hora Inicio"
                 ></v-time>
                 <span>Hasta</span>
                 <v-time
@@ -236,7 +236,7 @@ export default {
             dd = this.addZero(dd);
             mm = this.addZero(mm);
             var fechaActual = yyyy + "-" + mm + "-" + dd;
-            
+            //10:00 - 09:51
             if (this.form.fecha_cita < fechaActual) {
                 this.$swal({
                     icon: "info",
@@ -273,9 +273,11 @@ export default {
                 return;
             }
             //Validar que la hora sea de la cita, sea mayor a la hora actual
-            if (this.form.fecha_cita >= fechaActual) {
+            if (this.form.fecha_cita <= fechaActual) {
                 var h = hoy.getHours();
                 var m = hoy.getMinutes();
+                h = this.addZero(h);
+                m = this.addZero(m);
                 var hora_actual = h + ":" + m;
                 if (this.form.hora_inicio < hora_actual) {
                     this.$swal({
@@ -296,7 +298,7 @@ export default {
                     icon: "info",
                     title:
                         "Existen validaciones del formulario que debe completar",
-                    text: "Seleccione una especialidad"
+                    text: "Seleccione una especialidad."
                 });
                 this.existenErroresForm = true;
                 return;
@@ -310,7 +312,7 @@ export default {
                     icon: "info",
                     title:
                         "Existen validaciones del formulario que debe completar",
-                    text: "Seleccione un Médico"
+                    text: "Seleccione un Médico."
                 });
                 this.existenErroresForm = true;
                 return;
@@ -457,7 +459,7 @@ export default {
               text: error
             });
           }
-          loader.hide();         
+          loader.hide();
         });
         }
     }

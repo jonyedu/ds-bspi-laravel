@@ -2,7 +2,7 @@
   <div class="row m-3">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <center>
-        <h5 class="mt-4">Crear Asociación entre Presentación y Producto</h5>
+        <h5 class="mt-4">Crear Asociación entre Productos y Presentaciones </h5>
       </center>
     </div>
 
@@ -188,7 +188,7 @@ export default {
                 title: "Existe un Error.",
                 text: error.response.data.mensaje
             });
-          }        
+          }
           if (error.response.status === 422) {
             if (error.response.data.errors.presentacion_nombre != null) {
               that.errores.err_nombre =

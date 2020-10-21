@@ -84,7 +84,7 @@
                 min="10"
                 v-model="dataInformacionSistema.identificacionCedula"
                 type="number"
-                placeholder="Ingresar cedula del usuario..."
+                placeholder="Cédula del usuario..."
             />
             <small
                 v-if="
@@ -105,7 +105,7 @@
                         'PASAPORTE'
                 "
                 v-model="dataInformacionSistema.identificacionPasaporte"
-                placeholder="Ingresar pasaporte del usuario..."
+                placeholder="Pasaporte del usuario..."
             />
             <small
                 v-if="
@@ -126,7 +126,7 @@
                         '17-DIGITOS'
                 "
                 v-model="dataInformacionSistema.identificacion17Digitos"
-                placeholder="El sistema dara este valor..."
+                placeholder="El sistema dará este valor."
                 disabled
             />
             <small
@@ -145,7 +145,7 @@
             <input
                 class="form-control"
                 v-model="identificacion17Digitos"
-                placeholder="CODIGO "
+                placeholder="CODIGO"
                 disabled
             />
         </div>

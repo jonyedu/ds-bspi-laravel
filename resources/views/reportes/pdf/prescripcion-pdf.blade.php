@@ -172,7 +172,7 @@
     <header>
         <div id="logo">
             @if ($prescripcion != null)
-            <img src="{{$prescripcion->hospital->HOSPITAL_LOGO}}" alt="logoHospital" id="imagen">
+            <img src="{{ $prescripcion->hospital->HOSPITAL_LOGO }}" alt="logoHospital" id="imagen">
             @else
             <h5>No hay Logo</h5>
             @endif
@@ -237,8 +237,8 @@
         <tbody>
             @if ($prescripcion != null)
             <tr>
-                <td class="text-left" colspan="4"><strong>PACIENTE: {{$prescripcion->cita->paciente->FULL_NAME}}</strong></td>
-                <td class="text-right" colspan="4"><strong>DOCTOR: {{$prescripcion->medico[0]->user->FULL_NAME}}</strong></td>
+                <td class="text-left" colspan="4" style="text-transform: uppercase;"><strong>PACIENTE: {{$prescripcion->cita->paciente->FULL_NAME}}</strong></td>
+                <td class="text-right" colspan="4" style="text-transform: uppercase;"><strong>DOCTOR: {{$prescripcion->medico[0]->user->FULL_NAME}}</strong></td>
             </tr>
             <tr>
                 <td class="text-left" colspan="4"><strong>DOCUMENTO IDENTIDAD: {{$prescripcion->cita->paciente->FULL_IDENTIFICATION}}</strong></td>
@@ -320,7 +320,7 @@
     <!-- Seccion de Nota.-->
     <div>
         <span style="font-weight: bold;font-size: 14px;">Nota: Para el retiro de los medicamentos ir la(s) farmacia(s).</span>
-        <span>    
+        <span>
             <br>
             @if ($prescripcion != null)
             @forelse ($prescripcion->prescripcionDetalle as $pre)
@@ -340,8 +340,8 @@
         <tbody>
             @if ($prescripcion != null)
             <tr>
-                <td class="text-left" colspan="4"><strong>{{$prescripcion->PRESCRIPCION_DOCTOR_FIRMA}}</strong></td>
-                <td class="text-right" colspan="4"><strong>{{$prescripcion->PRESCRIPCION_PACIENTE_FIRMA}}</strong></td>
+                <td class="text-left" style="text-transform: uppercase;" colspan="4"><strong>{{$prescripcion->PRESCRIPCION_DOCTOR_FIRMA}}</strong></td>
+                <td class="text-right" colspan="4" style="text-transform: uppercase;"><strong>{{ucfirst($prescripcion->PRESCRIPCION_PACIENTE_FIRMA) }}</strong></td>
             </tr>
             <tr>
                 <td class="text-left" colspan="4"><strong>{{$prescripcion->medico[0]->user->FULL_IDENTIFICATION}}</strong></td>
