@@ -1,1 +1,0 @@
-drop table siemprea_bspi_gestion_hospitalaria.movimiento_inventario;

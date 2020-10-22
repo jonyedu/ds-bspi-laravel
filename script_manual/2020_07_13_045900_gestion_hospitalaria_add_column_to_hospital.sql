@@ -1,2 +1,0 @@
-ALTER TABLE `siemprea_bspi_gestion_hospitalaria`.`hospital` 
-ADD COLUMN `HOSPITAL_LOGO` LONGTEXT NULL DEFAULT NULL AFTER `HOSPITAL_WEB_PAGE`;
