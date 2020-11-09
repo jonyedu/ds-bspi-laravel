@@ -105,7 +105,6 @@
 </template>
 <script>
 import { prefix } from "../../variables";
-
 export default {
     props: {
         columnsData: {
@@ -134,7 +133,7 @@ export default {
             this.cargarConfiguraciones();
         }
         this.cargarModulos();
-        
+
         this.prefijo = prefix;
     },
     methods: {

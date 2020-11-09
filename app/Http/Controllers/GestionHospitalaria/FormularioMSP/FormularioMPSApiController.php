@@ -52,11 +52,11 @@ class FormularioMPSApiController extends Controller
                 $antecedenteFamiliar = null;
                 $examenFisico = null;
                 $nombreArchivo = "No existen datos.pdf";
-                
+
                 //Creo un objeto de la clase FormularioMPSApiController, para llamar a sus metodos
                 $formularioMSP = new FormularioMPSApiController;
 
-                /*Para llenar la session: 0 ENCABEZADO, 1 MOTIVO DE CONSULTA, 2 ANTECEDENTES PERSONALES, 3 ANTECEDENTES FAMILIARES, 
+                /*Para llenar la session: 0 ENCABEZADO, 1 MOTIVO DE CONSULTA, 2 ANTECEDENTES PERSONALES, 3 ANTECEDENTES FAMILIARES,
                 4 ENFERMEDAD O PROBLEMA ACTUAL, 5 REVISION ACTUAL DE ORGANOS Y SISTEMAS, 7 EXAMEN FISICO, 8 DIAGNOSTICOS
                 9 PLANES DE DIAGNOSTICO, TERAPEUTICOS Y EDUCACIONALES, 10 PIE DE PAGINA */
                 $cita = Cita::where('CITA_LOGIC_ESTADO', 'A')
@@ -67,8 +67,8 @@ class FormularioMPSApiController extends Controller
                         $i->where('ESTADOCITA_TIPO', 'C')->where('ESPECIALIDAD_COD', '!=', 'null');
                     }])
                     ->first();
-                //return $cita;  
-               
+                //return $cita;
+
                 /*Para llenar la session: 6 SIGNOS VITALES, 11 EVOLUCION Y PRESCRIPCIONES */
                  $citaArray = Cita::where('CITA_LOGIC_ESTADO', 'A')
                      ->where('USER_ID', $idUser)
@@ -78,8 +78,8 @@ class FormularioMPSApiController extends Controller
                          $i->where('ESTADOCITA_TIPO', 'C')->where('ESPECIALIDAD_COD', '!=', 'null');
                      }])
                      ->take(8)
-                     ->get();  
-                
+                     ->get();
+
                 //Para concatenar el nombre del archivo
                 if ($cita != null) {
                     if ($cita->paciente != null) {
@@ -89,7 +89,7 @@ class FormularioMPSApiController extends Controller
                         $nombreArchivo = $nombrePaciente . '-' . $cedulaPaciente . '-' . $fechaImpresion . '.pdf';
                     }
                 }
-                
+
                 //Si no hay datos en cita o en citaArray retorna al pdf vacio
                 if ($cita == null || $citaArray == null) {
                     $pdf = PDF::loadView(
@@ -105,7 +105,7 @@ class FormularioMPSApiController extends Controller
                 }
                 //Si no hay datos en la tabla antecedente o en la tabla examenFisico
                 else if ($cita->antecedente == null || $cita->examenFisico == null) {
-                    
+
                     $pdf = PDF::loadView(
                         'formularios-msp.formulario-msp-002-pdf',
                         [
@@ -120,7 +120,7 @@ class FormularioMPSApiController extends Controller
 
                     $antecedenteFamiliar = $formularioMSP->armarAntecedenteFamiliar($cita->antecedente);
                     $examenFisico = $formularioMSP->armarExamenFisico($cita->examenFisico);
-                  
+
                     $pdf = PDF::loadView('formularios-msp.formulario-msp-002-pdf', [
                         'cita' => $cita,
                         'citaArray' => $citaArray,
@@ -182,7 +182,7 @@ class FormularioMPSApiController extends Controller
                 $otro = "SI";
             }
         }
-        
+
 
         return 'Cardiopatia: ' . $cardiopatia . ',' .
             ' Diabetes: ' . $diabetes . ',' .
@@ -236,7 +236,7 @@ class FormularioMPSApiController extends Controller
                 $extremidesDescripcion = $examenFisico->EXAMENFISICO_EXTREMIDADES_CP_DESCRIPCION;
             }
         }
-       
+
 
         return 'Cabeza: ' . $cabeza . ',' .
             ' Descripcion de Cabeza: ' . $cabezaDescripcion . ',' .
